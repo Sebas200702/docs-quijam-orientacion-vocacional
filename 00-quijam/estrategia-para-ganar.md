@@ -38,7 +38,7 @@ Tenemos ~2 días. Quien llega preparado le saca horas de ventaja a quien llega a
 | 2 | **3 datos reales verificados**, con su fuente, para reemplazar los `[DATO POR VERIFICAR]` clave | Validación y pitch (Mateo) | Un número real vale más que diez supuestos |
 | 3 | **3–5 conversaciones con usuarios reales** (estudiantes o bachilleres), con una cita textual o un audio corto | Mateo + Santiago | "Validamos con usuarios" es lo que más distingue de otros equipos |
 | 4 | Diseño base: paleta, tipografía, componentes y las 5 pantallas del golden path en Figma | Diseñador de producto (Santiago) | El día 1 se construye, no se diseña desde cero |
-| 5 | Plantilla del repo, stack probado, despliegue de prueba y llaves de LLM funcionando *(si las reglas permiten código previo)* | Datos y plataforma (Ángel) + Arquitecto (Sebastián) | Elimina el riesgo técnico de la primera hora |
+| 5 | Plantilla del repo, stack probado, despliegue de prueba y llave de la Gemini API funcionando en el servidor *(si las reglas permiten código previo)* | Datos y plataforma (Ángel) + Arquitecto (Sebastián) | Elimina el riesgo técnico de la primera hora |
 | 6 | Prompts y contenido semilla (datos demo, respuestas cacheadas) | Arquitecto de IA (Sebastián) | La IA sale bien en la demo, no "a ver qué responde" |
 | 7 | Primer borrador del pitch y del guion de demo | Validación y pitch (Mateo) | Se ensaya desde el día 1, no la mañana del día 2 |
 

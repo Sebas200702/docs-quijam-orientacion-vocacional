@@ -6,22 +6,56 @@ El estudiante vive cuatro momentos de un día profesional como protagonista. No 
 
 ## Estructura de un guion
 
-- **Protagonista:** nombre, rol y lugar (por ejemplo, "Daniela, enfermera de urgencias en un hospital de Barranquilla"). No se nombra un hospital ni una empresa real.
+- **Protagonista:** nombre, rol y lugar (por ejemplo, "Julián, médico general de urgencias en una clínica de Barranquilla"). No se nombra un hospital ni una empresa real.
 - **4 escenas** que cubren: rutina, reto técnico, lado humano o difícil, y cierre o crecimiento.
 - **Por escena:** `timeLabel`, `setting`, `situation`, 2–3 `choices` (cada una con su `consequence` y el `trait` que revela), `groundingFacts` (3–6 hechos cualitativos que la IA puede usar) y `staticNarration` (fallback completo).
 
-## Guion de ejemplo — Enfermería (P0, demo)
+## Por qué Ingeniería de Sistemas y Medicina
+
+Solo dos carreras tienen simulación completa con IA en el MVP; Derecho y Tecnología en Gestión Logística tienen ficha, info realista y guion estático (IA en P1). Decisión del equipo: "hagámoslo con la carrera que todos dominamos que sería ingeniería de sistema pero también llévemonos a otro extremo ... medicina".
+
+- **Ingeniería de Sistemas, la que conocemos a fondo.** Todo el equipo la vive: el guion sale realista y fácil de curar en pocas horas.
+- **Medicina, el otro extremo.** Está lejos de la tecnología, es una de las carreras que más sueñan los estudiantes de 10 y 11 y es de las que más cuesta en tiempo y dinero si no era lo que se pensaba. Si Rumbo funciona con Medicina, el jurado ve que el formato sirve para cualquier carrera, no solo para la nuestra.
+
+## Guion de ejemplo — Medicina (P0, demo)
+
+Protagonista: **Julián, médico general del servicio de urgencias** de una clínica de Barranquilla (ficticia). Lo acompañan Samuel, interno de último año, y la doctora Peña, internista de turno. Se reparten los géneros para no repetir jerarquías por género (`06-ai/sesgos-y-seguridad-menores.md`).
 
 | # | Hora | Situación | Decisiones (rasgo que revela) |
 |---|------|-----------|-------------------------------|
-| 1 | 6:00 a. m. | Entrega de turno en urgencias: recibes 6 pacientes y las notas del turno de la noche. | Revisar primero al paciente más grave (priorizar) · Leer todas las notas antes de moverte (organizar) · Preguntar a la compañera saliente (trabajo en equipo) |
-| 2 | 9:30 a. m. | Un adulto mayor tiene que recibir un medicamento, pero la orden médica parece tener un error. | Verificar con el médico antes de aplicarlo (seguridad) · Consultar el protocolo (rigor) |
-| 3 | 1:00 p. m. | La hija del paciente está asustada y te pide explicaciones mientras suena otro llamado. | Explicarle con calma en 2 minutos y pedir apoyo (empatía + priorización) · Atender el llamado y volver después (priorización) |
-| 4 | 5:30 p. m. | Cierre del turno: registras en la historia clínica y entregas a tu relevo. | Entrega detallada (rigor) · Entrega rápida y quedarte a ayudar (compromiso) |
+| 1 | 7:00 a. m. | **Triage en urgencias.** Recibes el turno y llegan tres pacientes casi al tiempo: don Ernesto, con dolor en el pecho; una niña con fiebre que llora en brazos de su papá; una señora con una cortada en la mano. | Ver primero a quien el triage marcó como más urgente (priorizar) · Leer rápido las notas del turno de la noche antes de moverte (organizar) · Ir con don Ernesto y pedirle a Samuel que tome los datos de los otros dos (trabajo en equipo) |
+| 2 | 10:30 a. m. | **Ronda y consulta.** En la ronda con Samuel encuentras a una señora con diabetes que vuelve por tercera vez en el mes. No sigue el tratamiento: dice que no entiende las indicaciones y que no le alcanza para ir hasta la farmacia. | Explicarle con palabras sencillas y pedir apoyo a trabajo social (empatía + recursividad) · Revisar con Samuel la historia clínica para entender qué falló (rigor + enseñar) |
+| 3 | 2:00 p. m. | **Una noticia difícil.** La familia de don Ernesto pregunta en el pasillo. Tienes que decirles que se queda hospitalizado, que hay que esperar exámenes y que todavía no hay certezas. | Buscar un lugar tranquilo y explicarlo sin tecnicismos (comunicación) · Pedir que la doctora Peña te acompañe (prudencia + trabajo en equipo) · Primero escuchar qué entendieron y qué temen (escucha) |
+| 4 | 7:00 p. m. | **Cierre del turno.** Te quedan dos historias clínicas por completar y un paciente esperando resultados. Tu relevo ya llegó. | Entregar paciente por paciente con detalle (rigor) · Terminar las notas antes de irte aunque salgas tarde (compromiso) |
 
-`groundingFacts` (escena 1): "Los turnos pueden ser de mañana, tarde o noche", "La entrega de turno es un momento clave de seguridad del paciente", "Enfermería coordina con médicos, auxiliares y familias". Sin cifras.
+`groundingFacts` (escena 1): "El triage ordena a los pacientes por gravedad, no por orden de llegada", "En urgencias el médico general trabaja con enfermería, auxiliares, especialistas y familias", "Los turnos pueden ser de día, de noche, fines de semana o festivos", "Buena parte del día se va en escuchar, examinar y escribir la historia clínica". Sin cifras.
+
+`groundingFacts` (escena 3): "Dar malas noticias se aprende y se practica durante la carrera", "Se explica en lenguaje sencillo, en un lugar privado y dejando espacio para preguntas", "Cuando no hay certezas se dice con honestidad". Sin cifras.
+
+### Seguridad del guion de Medicina
+
+- **Todos los casos son ficticios y educativos.** Ningún paciente, clínica ni médico es real.
+- **No hay consejo médico.** La narración no nombra medicamentos ni dosis ni da indicaciones de tratamiento; las decisiones del estudiante son de comunicación, prioridad y trabajo en equipo, no clínicas. La consecuencia de cada decisión ya está escrita en el guion.
+- **Nada sobre la salud del estudiante.** Si pregunta por su propia salud o la de alguien cercano ("me duele el pecho, ¿qué me tomo?", "¿será que tengo lo mismo?"), la IA no responde el contenido: se clasifica como `personal_health` y se muestra un texto fijo, no generado: "Esto es una simulación educativa y no puedo darte consejos médicos ni decirte qué tienes. Si te sientes mal, cuéntaselo a un adulto de confianza y consulta a un profesional de salud. Si es una emergencia, llama a la línea de emergencias `[DATO POR VERIFICAR — fuente sugerida: Secretaría de Salud de Barranquilla / Ministerio de Salud (Línea 123)]`." Después puede seguir con la simulación (FR-047, AC-15).
+- Si la pregunta muestra riesgo (por ejemplo, sobre hacerse daño), manda el protocolo `risk_signal` (F5), que tiene prioridad.
+
+### Ruta real de Medicina (va en la ficha, nunca en la IA)
+
+La simulación no da estos datos; si el estudiante los pide, `intent: data_request` lo lleva a la ficha:
+
+| Dato | Estado |
+|------|--------|
+| Duración del programa | `[DATO POR VERIFICAR — fuente sugerida: SNIES]` |
+| Internado (último año de práctica en hospitales) | Duración y condiciones: `[DATO POR VERIFICAR — fuente sugerida: SNIES / pensum oficial de cada institución]` |
+| Servicio Social Obligatorio ("año rural") | Duración, modalidades y exoneraciones: `[DATO POR VERIFICAR — fuente sugerida: Ministerio de Salud]` |
+| Costo por semestre (pública / privada) | `[DATO POR VERIFICAR — fuente sugerida: SNIES / sitio oficial de cada institución]` |
+| Salario de enganche del médico general | `[DATO POR VERIFICAR — fuente sugerida: Observatorio Laboral para la Educación]` |
+| Vinculación laboral | `[DATO POR VERIFICAR — fuente sugerida: Observatorio Laboral para la Educación]` |
+| Especialización | Cualitativo: es un estudio aparte, posterior y con cupos limitados; cifras `[DATO POR VERIFICAR — fuente sugerida: SNIES]` |
 
 ## Guion de ejemplo — Ingeniería de Sistemas (P0, demo)
+
+Protagonista: **Andrea, desarrolladora** en una empresa de software de Barranquilla (ficticia).
 
 | # | Hora | Situación | Decisiones |
 |---|------|-----------|------------|
@@ -32,14 +66,14 @@ El estudiante vive cuatro momentos de un día profesional como protagonista. No 
 
 ## Contrato de la IA en cada turno
 
-**Entrada al LLM** (sin PII): prompt de sistema con versión, guion de la carrera, escena actual, decisión elegida o texto libre (280 caracteres como máximo) y las 2 últimas salidas.
+**Entrada a Gemini** (sin PII; modelo de clase Flash, ver ADR-006): prompt de sistema con versión, guion de la carrera, escena actual, decisión elegida o texto libre (280 caracteres como máximo) y las 2 últimas salidas.
 
 **Salida esperada** (JSON validado con Zod):
 
 ```json
 {
-  "narration": "Llegas al puesto de enfermería. La compañera de la noche te entrega...",
-  "intent": "story | question_answered | data_request | off_topic | risk_signal",
+  "narration": "Llegas a urgencias. El médico de la noche te entrega el turno...",
+  "intent": "story | question_answered | data_request | off_topic | personal_health | risk_signal",
   "choicesShown": ["c1", "c2", "c3"],
   "linkToFicha": null
 }
@@ -54,15 +88,17 @@ El estudiante vive cuatro momentos de un día profesional como protagonista. No 
 5. No digas al estudiante qué carrera estudiar ni si "sirve" para ella.
 6. No asumas el género del estudiante; el protagonista es el personaje del guion.
 7. Ante señales de angustia, autolesión, abuso o riesgo, usa `intent: risk_signal` y no continúes la historia.
+8. Los casos clínicos son ficticios y educativos: no nombres medicamentos ni dosis ni des indicaciones de tratamiento.
+9. Si el estudiante pregunta por su propia salud o la de alguien cercano, usa `intent: personal_health` y no respondas el contenido.
 
 ## Guardas posteriores (deterministas, `06-ai/grounding-y-alucinaciones.md`)
 
-Validación del esquema → detector de cifras → detector de imperativos de decisión ("deberías estudiar") → longitud. Si alguna falla, se usa `staticNarration` o la `consequence` del guion. Se registra en `AiTurnLog`.
+Validación del esquema → detector de cifras → detector de imperativos de decisión ("deberías estudiar") → detector de consejo médico (dosis, "tómate", "te recomiendo tomar") → longitud. Si alguna falla, se usa `staticNarration` o la `consequence` del guion. Se registra en `AiTurnLog`.
 
 ## Fallback y caché
 
 - **Timeout de 8 s o error** → texto estático (FR-045).
-- **Demo:** las respuestas del recorrido exacto de la demo se precalculan y se guardan en caché por `hash(escena, decisión)`; si el LLM falla en el escenario, se sirven desde caché (`source: cache`).
+- **Demo:** las respuestas del recorrido exacto de la demo se precalculan y se guardan en caché por `hash(escena, decisión)`; si Gemini falla en el escenario, se sirven desde caché (`source: cache`).
 
 ## Reflexión final
 

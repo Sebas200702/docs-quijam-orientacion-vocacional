@@ -7,13 +7,13 @@ Construible en la ventana de QuiJAM (≈19 h 30 min de construcción efectiva y 
 1. Modo demo con 2 perfiles semilla (Valentina, Andrés) y reinicio.
 2. Onboarding corto (intereses, materias, ruta).
 3. Test de 24 ítems, motor determinista, top 3 explicado más 1 fuera de zona.
-4. Catálogo de 4 carreras: Enfermería, Ingeniería de Sistemas, Derecho y Tecnología en Gestión Logística (SENA).
-5. Simulación con IA de 4 escenas para **Enfermería e Ingeniería de Sistemas**, con fallback estático. Las otras dos carreras tienen al menos el guion estático.
+4. Catálogo de 4 carreras: Ingeniería de Sistemas, Medicina, Derecho y Tecnología en Gestión Logística (SENA).
+5. Simulación con IA de 4 escenas para **Ingeniería de Sistemas y Medicina** (la que dominamos y el otro extremo), con fallback estático. Derecho y Logística tienen ficha, info realista y guion estático.
 6. Ficha Contrastar completa para las 4 carreras (con fuente o "por verificar").
 7. Agenda (8 eventos de ejemplo) y mentores (4 de ejemplo) con preguntas moderadas.
 8. Bitácora, comparador, mi decisión y resumen compartible.
 9. Pantalla de consentimiento del acudiente (envío simulado).
-10. Guardas de IA: sin cifras, sin PII en prompts, señales de riesgo.
+10. Guardas de IA: sin cifras, sin PII en prompts, señales de riesgo y sin consejo médico (FR-047).
 
 ## P1 — Si sobra tiempo o justo después del evento
 
@@ -23,6 +23,7 @@ Construible en la ventana de QuiJAM (≈19 h 30 min de construcción efectiva y 
 4. Repetir el test e historial.
 5. Rutas de continuidad y financiación.
 6. Retomar una simulación.
+7. Voz del profesional virtual con Gemini Live API (voz en tiempo real), si el P0 está verde. El equipo ya la usó en producción (Manglara).
 
 ## P2 — Posterior
 
@@ -38,7 +39,7 @@ Construible en la ventana de QuiJAM (≈19 h 30 min de construcción efectiva y 
 | Componente | En la demo | Nota para el jurado |
 |------------|-----------|---------------------|
 | Test y motor de recomendación | **Real** | Determinista y explicable |
-| Simulación con LLM (2 carreras) | **Real** | Con caché de respaldo para el guion de la demo |
+| Simulación con Gemini (Sistemas y Medicina) | **Real** | Con caché de respaldo para el guion de la demo |
 | Guiones de escenas | **Real**, escritos por el equipo | Revisar con profesionales después del evento |
 | Datos de la ficha (pensum, salario, empleabilidad) | **Real si están verificados**; si no, se muestra "por verificar" | Curados a mano desde las fuentes oficiales; nunca inventados |
 | Instituciones donde se estudia | Real (nombres públicos) | Confirmar la oferta vigente en SNIES |

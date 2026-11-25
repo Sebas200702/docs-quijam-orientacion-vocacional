@@ -35,8 +35,8 @@ El banco completo de 24 ítems se escribe el jueves en la ideación y queda en `
 
 ## Ejemplo de tarjeta (Valentina)
 
-> **Enfermería — afinidad 98**
-> Te la mostramos porque te interesa **Ayudar** e **Investigar**, que son centrales en Enfermería.
+> **Medicina — afinidad 98**
+> Te la mostramos porque te interesa **Ayudar** e **Investigar**, que son centrales en Medicina.
 > · Marcaste *Mucho* en "Me gusta ayudar a personas cuando están enfermas o tienen un problema".
 > · Marcaste *Mucho* en "Me gusta entender por qué pasan las cosas".
 > [Vívela]

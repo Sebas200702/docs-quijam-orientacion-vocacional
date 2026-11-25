@@ -15,14 +15,14 @@ Pasar de lo simulado a lo humano: eventos reales todo el año y preguntas a quie
 
 | # | Institución | Tipo | Carreras |
 |---|-------------|------|----------|
-| 1 | Universidad de la Costa (CUC) | Descubre | Enfermería, Ing. de Sistemas, Derecho |
-| 2 | Universidad Simón Bolívar | Puertas abiertas | Enfermería, Derecho |
+| 1 | Universidad de la Costa (CUC) | Descubre | Medicina, Ing. de Sistemas, Derecho |
+| 2 | Universidad Simón Bolívar | Puertas abiertas | Medicina, Derecho |
 | 3 | Universidad Autónoma del Caribe | Feria de programas | Ing. de Sistemas, Derecho |
 | 4 | SENA | Charla de oferta tecnológica | Gestión Logística, Sistemas |
 | 5 | Tecnoparque SENA | Taller de prototipado | Ing. de Sistemas |
 | 6 | Universidad de la Costa (CUC) | Charla con egresados | Ing. de Sistemas |
 | 7 | SENA | Visita a centro de formación | Gestión Logística |
-| 8 | Universidad Simón Bolívar | Taller "un día en salud" | Enfermería |
+| 8 | Universidad Simón Bolívar | Taller "un día en salud" | Medicina |
 
 Las fechas del seed son ficticias y relativas a la fecha de la demo (próximas 8 semanas). Fechas reales: `[DATO POR VERIFICAR — fuente sugerida: oficina de admisiones de cada institución]`. Antes de usar los nombres de las instituciones en la demo, confirmar con ellas o rotular claramente "ejemplo".
 

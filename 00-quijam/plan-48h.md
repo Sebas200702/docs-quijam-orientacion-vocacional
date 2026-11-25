@@ -25,10 +25,10 @@
 | 08:00 Registro / 08:30 Apertura | — | Entorno listo | Entorno listo | Llaves de API probadas | — | Confirmar duración del pitch y las reglas sobre código previo |
 | 09:00 Conformación de equipos | — | Confirmar roles | | | | |
 | 09:45 Comprender el reto | Validar el encaje con el eje | Escuchan | Escuchan | Escuchan | Escuchan | Toma nota de los criterios del jurado; ajusta `reto-y-alineacion.md` |
-| 11:00 Ideación | Congelar alcance | Revisa P0 | Congela el modelo de datos | Congela el formato del guion de escenas | Wireframes de 6 pantallas | Elige las 4 carreras y las 2 de la demo |
+| 11:00 Ideación | Congelar alcance | Revisa P0 | Congela el modelo de datos | Congela el formato del guion de escenas | Wireframes de 6 pantallas | Confirma las 4 carreras (Sistemas y Medicina con simulación de IA) |
 | 12:30 Almuerzo | | | | | | |
-| 13:30 Impulso técnico | Preguntas a mentores técnicos | | Consulta sobre el despliegue | Consulta sobre límites del LLM | | |
-| 14:00–16:00 Construcción | Esqueleto | Rutas, layout, onboarding | Esquema, migración, seed vacío, `/health`, deploy inicial | Prompt de simulación v1 con 1 carrera | Componentes base y paleta | Ficha de Enfermería con fuentes |
+| 13:30 Impulso técnico | Preguntas a mentores técnicos | | Consulta sobre el despliegue | Consulta sobre cuotas de la Gemini API (nivel gratuito) | | |
+| 14:00–16:00 Construcción | Esqueleto | Rutas, layout, onboarding | Esquema, migración, seed vacío, `/health`, deploy inicial | Prompt de simulación v1 con 1 carrera | Componentes base y paleta | Ficha de Medicina con fuentes |
 | 16:00–18:00 | Primer loop | Test y resultados | `POST /assessments`, motor de recomendación | Explicación del test (IA + plantilla) | Pantalla de simulación | Fichas restantes; guion de demo v1 |
 | **18:00 Punto de control** | Demo interna | Mostrar: onboarding → test → top 3 | | | | Cronometrar |
 | 18:30–22:00 Noche | Vivir + Contrastar | Simulación (streaming), ficha | `POST /simulations`, turnos, guardas | Grounding, rechazo de cifras, fallback estático | Pulido de simulación y ficha | Verificación de datos, mitos y realidades |
@@ -48,6 +48,6 @@
 ## Puntos de corte (si vamos atrasados)
 
 1. 18:00: si el test no funciona, se usa un perfil precalculado y todo el esfuerzo va a la simulación.
-2. 01:00: si la simulación con LLM no es estable, la demo usa el guion estático y la IA solo responde preguntas libres.
+2. 01:00: si la simulación con Gemini no es estable, la demo usa el guion estático y la IA solo responde preguntas libres.
 3. 05:00: si Conectar no está, se muestra la agenda como lista estática del seed.
 4. 08:45: congelamiento. Lo que no funciona sale del guion.

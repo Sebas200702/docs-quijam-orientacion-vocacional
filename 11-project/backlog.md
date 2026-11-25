@@ -16,7 +16,7 @@ Estimaciones en horas (h) por persona, propias del equipo. Rol: FE, BE, AI, UX, 
 | B-08 | Eventos, mentores, preguntas, filtro de contactos y moderación | BE | 2,5 | FR-060…FR-064, FR-092 |
 | B-09 | Bitácora, comparador, decisiones y enlaces para compartir | BE | 2 | FR-070…FR-073 |
 | B-10 | SimulationProvider: LLM, guardas, caché y estático | AI | 4 | FR-040…FR-045 |
-| B-11 | Prompt `simulation.v1` y batería AI-01…AI-12 | AI | 3 | — |
+| B-11 | Prompt `simulation.v1` (Gemini), guarda de consejo médico y batería AI-01…AI-15 | AI | 3 | — |
 | B-12 | Explicación del test con IA más validación | AI | 1 | FR-022 |
 | B-13 | Detector de riesgo y protocolo | AI | 1 | BR-024 |
 | B-14 | Layout, navegación, onboarding y ConsentGate | FE | 3 | FR-001…FR-011 |
@@ -26,7 +26,7 @@ Estimaciones en horas (h) por persona, propias del equipo. Rol: FE, BE, AI, UX, 
 | B-18 | Conectar (agenda, mentores, preguntas) | FE | 2 | FR-060…FR-064 |
 | B-19 | Bitácora, comparador, mi decisión y resumen /r/:token | FE | 3 | FR-070…FR-073 |
 | B-20 | Wireframes y sistema visual (tokens, componentes) | UX | 3 | — |
-| B-21 | Guiones: Enfermería y Sistemas (4 escenas cada uno, con estático) | UX + AI | 3 | — |
+| B-21 | Guiones: Sistemas y Medicina (4 escenas cada uno, con estático; Medicina con casos ficticios y sin consejo médico) | UX + AI | 3 | — |
 | B-22 | Guiones estáticos: Derecho y Logística | UX | 2 | — |
 | B-23 | Ítems del test (24) | UX + PL | 1,5 | FR-020 |
 | B-24 | Fichas de las 4 carreras: pensum, mitos, dónde estudiar | PL | 4 | — |

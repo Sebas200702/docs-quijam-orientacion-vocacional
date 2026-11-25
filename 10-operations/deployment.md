@@ -12,7 +12,7 @@ Alternativa para el frontend: Vercel, si el VPS falla (la API sigue en Dokploy).
 
 ## Checklist (viernes 09:00)
 
-- [ ] Variables configuradas (sin `DEMO_KEY` por defecto).
+- [ ] Variables configuradas (sin `DEMO_KEY` por defecto; `GEMINI_API_KEY` y `GEMINI_MODEL` solo en el servidor).
 - [ ] Migraciones aplicadas.
 - [ ] `bun run seed` sin errores del linter.
 - [ ] `GET /health` → `db: ok`, `llm: ok`.

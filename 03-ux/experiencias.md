@@ -11,7 +11,7 @@ Diseño funcional y de contenido en `05-experiencias/`. Aquí: pantallas, compon
 
 ## 2. Vivir — "un día en la carrera"
 
-- Pantalla tipo historia: cabecera con la hora del día de la escena ("6:00 a. m. — Entrega de turno"), lugar y protagonista ("Eres Daniela, enfermera del servicio de urgencias").
+- Pantalla tipo historia: cabecera con la hora del día de la escena ("7:00 a. m. — Triage en urgencias"), lugar y protagonista ("Eres Julián, médico general de urgencias").
 - Narración con streaming. Debajo, 2–3 botones de decisión y un campo opcional "Escribe tu pregunta" (280 caracteres).
 - Indicador de escena (1/4 … 4/4). Botón *Salir* que guarda el progreso (P1: retomar).
 - Si se activa el fallback, no se avisa del error; el texto aparece completo sin streaming.

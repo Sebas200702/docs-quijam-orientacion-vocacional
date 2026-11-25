@@ -8,10 +8,10 @@
 
 | Uso | Modelo | Fallback |
 |-----|--------|----------|
-| Narrar escenas de la simulación y responder preguntas dentro del guion | LLM (ver ADR-006) | `staticNarration` / caché |
-| Reescribir en tono natural la explicación de la recomendación | LLM | Plantilla determinista |
-| Clasificar la intención del texto libre (story, data_request, off_topic, risk_signal) | LLM más reglas de palabras clave | Solo reglas |
-| Prefiltro de moderación de preguntas a mentores (P1) | LLM | Reglas más moderación humana |
+| Narrar escenas de la simulación y responder preguntas dentro del guion | Gemini, clase Flash (ADR-006) | `staticNarration` / caché |
+| Reescribir en tono natural la explicación de la recomendación | Gemini, clase Flash | Plantilla determinista |
+| Clasificar la intención del texto libre (story, data_request, off_topic, personal_health, risk_signal) | Gemini más reglas de palabras clave | Solo reglas |
+| Prefiltro de moderación de preguntas a mentores (P1) | Gemini | Reglas más moderación humana |
 | Apoyo al equipo para redactar borradores de contenido (fuera de runtime) | Cualquiera | Revisión humana obligatoria |
 
 ## La IA puede
@@ -30,6 +30,7 @@
 - Nombrar instituciones, hospitales o empresas reales que no estén en el guion.
 - Inferir o mencionar el género, el estrato, la etnia, la religión o la orientación del estudiante.
 - Hacer consejería psicológica, diagnosticar o manejar crisis por su cuenta (solo activa el protocolo).
+- Dar consejo médico: ni diagnósticos, ni medicamentos, ni dosis, ni sobre la salud del estudiante ni como indicación clínica en la simulación (FR-047).
 - Recibir datos personales (alias, colegio, contactos) en el prompt.
 - Publicar nada a los mentores ni al acudiente sin pasar por las reglas y la moderación.
 
@@ -37,10 +38,10 @@
 
 ```
 Entrada del estudiante
-  → Prefiltro determinista (longitud, PII, palabras de riesgo)
-  → LLM (prompt versionado + escena + groundingFacts)
+  → Prefiltro determinista (longitud, PII, palabras de riesgo y de salud personal)
+  → Gemini API (prompt versionado + escena + groundingFacts)
   → Validación de esquema (Zod)
-  → Guardas deterministas (cifras, imperativos, riesgo, longitud)
+  → Guardas deterministas (cifras, imperativos, consejo médico, riesgo, longitud)
   → UI    |   si falla cualquier paso → texto estático del guion
   → AiTurnLog (sin PII)
 ```

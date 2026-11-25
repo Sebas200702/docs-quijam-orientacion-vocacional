@@ -4,7 +4,7 @@
 |----|-------|---------|-------|----|
 | US-01 | estudiante sin idea clara | hacer un test corto | ver tres caminos que encajan conmigo y por qué | FR-020…FR-024 |
 | US-02 | estudiante | ver una carrera fuera de mi zona | no quedarme solo con lo obvio | FR-023 |
-| US-03 | estudiante | vivir un día simulado en Enfermería | saber si me veo en un turno real | FR-040…FR-044 |
+| US-03 | estudiante | vivir un día simulado en Medicina | saber si me veo en un turno real de urgencias | FR-040…FR-044 |
 | US-04 | estudiante | preguntar en la simulación "¿y cuánto se gana?" | obtener la respuesta real y no una inventada | FR-043, FR-051 |
 | US-05 | estudiante | ver el pensum, la duración, el costo y el salario con fuente | contrastar lo que viví con la realidad | FR-050…FR-054 |
 | US-06 | estudiante | saber dónde estudiarla en Barranquilla, incluido el SENA | conocer rutas que se ajustan a mi situación | FR-054 |

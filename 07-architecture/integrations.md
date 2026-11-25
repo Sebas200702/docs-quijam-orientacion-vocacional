@@ -2,7 +2,8 @@
 
 | Integración | MVP | Después |
 |-------------|-----|---------|
-| **LLM** (proveedor según ADR-006) | Real, con timeout de 8 s, límite de tokens y fallback | Afinar el prompt por carrera; evaluación continua |
+| **Gemini API** (Google AI Studio; llave solo en el servidor; ADR-006) | Real, modelo de clase Flash, con timeout de 8 s, límite de tokens y fallback | Afinar el prompt por carrera; evaluación continua |
+| **Gemini Live API** (voz en tiempo real) | — | Voz del profesional virtual (P1/P2); el equipo ya la usó en producción en Manglara |
 | **SNIES** (MEN) | Consulta manual; datos copiados al seed con fuente y año | Ingesta periódica del listado de programas (P2) |
 | **Observatorio Laboral para la Educación** | Consulta manual | Ingesta de los indicadores de vinculación y salario de enganche (P2) |
 | **SPADIES** | Solo para el pitch (contexto de deserción), marcado por verificar | Panel de impacto (P2) |

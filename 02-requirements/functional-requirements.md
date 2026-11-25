@@ -38,6 +38,7 @@ Prioridad entre corchetes. Los criterios verificables están en `acceptance-crit
 - FR-044 [P0]: Al terminar, pedir una reflexión: "¿Te viste haciendo esto?" (escala de 1 a 5), qué le gustó y qué no.
 - FR-045 [P0]: Si el LLM falla o tarda más de 8 s, continuar con el texto estático del guion sin perder el progreso.
 - FR-046 [P1]: Retomar una simulación interrumpida.
+- FR-047 [P0]: Si el estudiante pregunta por su propia salud o la de alguien cercano, no responder el contenido: mostrar un texto fijo que remite a un profesional de salud o a la línea de emergencias, sin diagnóstico, medicamentos ni dosis (los casos clínicos de la simulación son ficticios y educativos).
 
 ## Contrastar — información realista
 

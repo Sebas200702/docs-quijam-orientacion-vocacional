@@ -21,13 +21,15 @@ bun run db:migrate
 bun run seed                     # valida y carga el contenido
 bun run dev                      # web + api
 bun test                         # Vitest
-bun run ai:eval                  # batería AI-01…AI-12 (usa LLM real)
+bun run ai:eval                  # batería AI-01…AI-15 (usa Gemini real)
 bun run lint && bun run typecheck
 ```
 
 ## Variables de entorno
 
-`DATABASE_URL`, `LLM_API_KEY`, `LLM_MODEL`, `LLM_TIMEOUT_MS=8000`, `LLM_DAILY_TOKEN_CAP`, `SESSION_SECRET`, `ADMIN_KEY`, `DEMO_KEY`, `DEMO_MODE=true|false`, `WEB_ORIGIN`.
+`DATABASE_URL`, `GEMINI_API_KEY`, `GEMINI_MODEL`, `LLM_TIMEOUT_MS=8000`, `LLM_DAILY_TOKEN_CAP`, `SESSION_SECRET`, `ADMIN_KEY`, `DEMO_KEY`, `DEMO_MODE=true|false`, `WEB_ORIGIN`.
+
+Nota de Gemini: `GEMINI_API_KEY` es la llave de Google AI Studio y vive solo en el servidor (nunca en `apps/web`, en el repo ni en los logs). `GEMINI_MODEL` es un modelo de clase Flash; la versión exacta la fija el Arquitecto de IA en el evento.
 
 ## Flujo de trabajo en la hackatón
 

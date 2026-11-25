@@ -44,9 +44,9 @@ Sin bono de chips, para simplificar:
 
 | Carrera | c (R,I,A,S,E,C) | Coseno | Afinidad | Resultado |
 |---------|-----------------|--------|----------|-----------|
-| Enfermería | .5,.6,.1,1,.3,.6 | 0,980 | 98 | Top 1 |
+| Medicina | .5,.9,.1,1,.3,.6 | 0,983 | 98 | Top 1 |
 | Derecho | .1,.6,.4,.6,1,.6 | 0,868 | 87 | Top 2 |
 | Ing. de Sistemas | .4,1,.4,.2,.3,.7 | 0,821 | 82 | Top 3 |
 | Tecn. Gestión Logística | .5,.4,.1,.3,.6,1 | 0,791 | 79 | Fuera de zona |
 
-Este ejemplo sirve como caso de prueba de `matching.spec.ts`. Los perfiles de las carreras son supuestos de diseño del equipo, no datos empíricos.
+Afinidades recalculadas con el perfil de Medicina (2026-11-24); Derecho, Sistemas y Logística no cambian. Este ejemplo sirve como caso de prueba de `matching.spec.ts`. Los perfiles de las carreras son supuestos de diseño del equipo, no datos empíricos.

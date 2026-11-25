@@ -46,7 +46,7 @@ Ninguna cifra se inventa. Toda estadística, salario o tasa que no esté verific
 
 Problema → Objetivo → Experiencia → Requisito (FR/NFR) → Regla (BR) → Dominio → API → Implementación → Test.
 
-Ejemplo: "los espacios de exploración son cortos y esporádicos" → "acceso a la experiencia todo el año" → Simulación → FR-040…FR-046 → BR-020…BR-024 → `Simulation`, `SimulationScene` → `POST /simulations` → `simulation-service` → `09-testing/ai-failures.md` casos AI-01…AI-12.
+Ejemplo: "los espacios de exploración son cortos y esporádicos" → "acceso a la experiencia todo el año" → Simulación → FR-040…FR-047 → BR-020…BR-025 → `Simulation`, `SimulationScene` → `POST /simulations` → `simulation-service` → `09-testing/ai-failures.md` casos AI-01…AI-15.
 
 ## Decisiones (ADR)
 

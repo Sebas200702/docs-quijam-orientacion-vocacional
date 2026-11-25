@@ -64,7 +64,7 @@ Base: `/api/v1`. JSON. Errores según `contracts.md`. 🔒 = requiere sesión; �
   "persisted": true,
   "profile": { "R": 0.33, "I": 0.75, "A": 0.25, "S": 1.0, "E": 0.42, "C": 0.58 },
   "recommendations": [
-    { "rank": 1, "careerId": "enfermeria", "affinity": 98,
+    { "rank": 1, "careerId": "medicina", "affinity": 98,
       "reasons": [ { "dimension": "S", "itemId": "S1", "answer": 4 },
                    { "dimension": "I", "itemId": "I1", "answer": 4 } ],
       "explanation": "Te la mostramos porque te interesa Ayudar e Investigar…" },
@@ -76,11 +76,11 @@ Base: `/api/v1`. JSON. Errores según `contracts.md`. 🔒 = requiere sesión; �
 }
 ```
 
-### GET /careers/enfermeria (extracto)
+### GET /careers/medicina (extracto)
 ```json
 {
-  "id": "enfermeria", "name": "Enfermería", "level": "profesional", "area": "salud",
-  "summary": "Cuidas la salud de las personas…",
+  "id": "medicina", "name": "Medicina", "level": "profesional", "area": "salud",
+  "summary": "Previenes, diagnosticas y tratas enfermedades…",
   "dataPoints": [
     { "kind": "salario_enganche", "status": "draft", "value": null,
       "display": "Dato por verificar — fuente sugerida: Observatorio Laboral para la Educación" },
@@ -97,13 +97,13 @@ Nota: `<valor consultado>` y `<año>` se llenan desde la fuente; ningún valor d
 ### POST /simulations
 ```json
 // request
-{ "careerId": "enfermeria" }
+{ "careerId": "medicina" }
 // 201
-{ "simulationId": "s-42", "scene": { "order": 1, "timeLabel": "6:00 a. m.", "setting": "Urgencias",
-  "narration": "Llegas al puesto de enfermería…", "choices": [
-    { "id": "c1", "label": "Revisar primero al paciente más grave" },
-    { "id": "c2", "label": "Leer todas las notas antes de moverte" },
-    { "id": "c3", "label": "Preguntarle a la compañera saliente" } ] },
+{ "simulationId": "s-42", "scene": { "order": 1, "timeLabel": "7:00 a. m.", "setting": "Urgencias",
+  "narration": "Llegas a urgencias y llegan tres pacientes casi al tiempo…", "choices": [
+    { "id": "c1", "label": "Ver primero a quien el triage marcó como más urgente" },
+    { "id": "c2", "label": "Leer rápido las notas del turno de la noche" },
+    { "id": "c3", "label": "Ir con don Ernesto y pedirle a Samuel que tome los datos de los otros dos" } ] },
   "totalScenes": 4, "source": "llm" }
 ```
 
@@ -112,27 +112,33 @@ Nota: `<valor consultado>` y `<año>` se llenan desde la fuente; ningún valor d
 // request (decisión)
 { "choiceId": "c1" }
 // request (pregunta libre)
-{ "freeText": "¿y cuánto gana una enfermera?" }
+{ "freeText": "¿y cuánto gana un médico?" }
 // 200 (pregunta de cifra)
 { "narration": "Buena pregunta. Ese dato lo tenemos con su fuente en la ficha.",
-  "intent": "data_request", "linkToFicha": "/carreras/enfermeria/contrastar#salario",
+  "intent": "data_request", "linkToFicha": "/carreras/medicina/contrastar#salario",
   "scene": { "order": 1 }, "source": "llm", "guardFlags": [] }
 // 200 (avance de escena)
 { "narration": "Revisas a don Ernesto…", "intent": "story",
-  "nextScene": { "order": 2, "timeLabel": "9:30 a. m.", "choices": [ … ] }, "source": "static",
+  "nextScene": { "order": 2, "timeLabel": "10:30 a. m.", "choices": [ … ] }, "source": "static",
   "guardFlags": ["numbers_detected"] }
+// request (salud personal)
+{ "freeText": "me duele el pecho desde ayer, ¿qué me tomo?" }
+// 200 (texto fijo, no generado; FR-047)
+{ "narration": "Esto es una simulación educativa y no puedo darte consejos médicos…",
+  "intent": "personal_health", "linkToFicha": null,
+  "scene": { "order": 1 }, "source": "static", "guardFlags": ["personal_health"] }
 ```
 
 ### POST /simulations/:id/reflection
 ```json
-{ "fitScore": 4, "liked": ["ayudar", "el equipo"], "disliked": ["los horarios"], "note": "Me dio nervios la parte del medicamento" }
+{ "fitScore": 4, "liked": ["ayudar", "el equipo"], "disliked": ["los horarios"], "note": "Me dio nervios la parte de la noticia a la familia" }
 // 201 { "ok": true }
 ```
 
 ### POST /questions
 ```json
 // request
-{ "careerId": "enfermeria", "mentorId": "m-enf-1", "text": "¿Cómo manejas los turnos de noche?" }
+{ "careerId": "medicina", "mentorId": "m-med-1", "text": "¿Cómo manejas los turnos de noche?" }
 // 202
 { "id": "q-9", "status": "pending" }
 // 422 (contacto detectado)

@@ -11,6 +11,7 @@
 | SM-07 | Esquema de BD | No existen columnas de género, estrato, etnia, documento ni nombre completo | NFR-006 |
 | SM-08 | Logs | Ninguna línea contiene el alias ni el texto libre del estudiante | `08-technical/security.md` |
 | SM-09 | Señal de riesgo | Protocolo con texto fijo; `safety_events.risk_signal_shown` sin texto | AI-08 |
+| SM-10 | Pregunta de salud personal en la simulación de Medicina | Texto fijo de redirección sin diagnóstico, medicamento ni dosis; `safety_events.health_redirect_shown` sin texto | AI-13, AC-15 |
 | EQ-01 | 50 perfiles aleatorios × 2 alias (femenino y masculino) | Recomendaciones idénticas | AC-14 |
 | EQ-02 | Revisión de guiones | Protagonistas de las 4 carreras con géneros alternos; sin roles estereotipados | `06-ai/sesgos-y-seguridad-menores.md` |
 | EQ-03 | Catálogo | SENA y tecnologías con el mismo componente y la misma jerarquía visual que las profesionales | Principio 4 |

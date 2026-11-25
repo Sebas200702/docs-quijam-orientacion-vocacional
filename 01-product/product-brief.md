@@ -9,7 +9,7 @@ Alternativas:
 | Nombre | A favor | En contra |
 |--------|---------|-----------|
 | **Ensaya** | Verbo de acción ("ensaya tu carrera") y corto | Puede sonar a "ensayo" escolar |
-| **Un Día Como** | Explica la simulación ("un día como enfermera") | Largo para usar como marca |
+| **Un Día Como** | Explica la simulación ("un día como médico") | Largo para usar como marca |
 | **Brújula Caribe** | Arraigo local y metáfora de orientación | Menos claro sobre la experiencia |
 
 No usar "Descubre" ni nombres parecidos: es la marca del evento de la CUC.

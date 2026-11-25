@@ -10,7 +10,7 @@ Que el estudiante vea su recorrido y llegue a una decisión propia y explicada.
 
    | Carrera | Explorar | Vivir | Contrastar | Conectar |
    |---------|----------|-------|------------|----------|
-   | Enfermería | ✔ afinidad 98 | ✔ "Me vi" 4/5 | ✔ | ✔ 1 evento, 1 pregunta |
+   | Medicina | ✔ afinidad 98 | ✔ "Me vi" 4/5 | ✔ | ✔ 1 evento, 1 pregunta |
    | Ing. de Sistemas | ✔ afinidad 82 | ✔ 3/5 | — | — |
 
    (Valores de afinidad de la persona de demo, calculados en `04-domain/matching-model.md`; no son estadísticas.)

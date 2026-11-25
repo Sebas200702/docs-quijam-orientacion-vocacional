@@ -16,13 +16,14 @@
 - BR-013: Toda recomendación lleva al menos 2 razones trazables a respuestas del estudiante.
 - BR-014: Ninguna institución puede pagar ni influir para aparecer en las recomendaciones.
 
-## Simulación (BR-020…BR-024)
+## Simulación (BR-020…BR-025)
 
 - BR-020: Solo se simulan carreras con `SimulationScript.status = verified`.
 - BR-021: La IA solo narra usando la escena actual y sus `groundingFacts`; las consecuencias de las decisiones salen del guion.
 - BR-022: Respuesta de la IA con cifras (dinero, %, años) → se descarta y se usa el texto estático más el enlace a la ficha.
 - BR-023: Máximo 6 turnos de IA por escena y 280 caracteres por entrada libre; si se excede, solo quedan los botones.
 - BR-024: Detección de señal de riesgo → se pausa la simulación y se muestra el protocolo de apoyo (`06-ai/sesgos-y-seguridad-menores.md`).
+- BR-025: Pregunta sobre la salud del propio estudiante o de alguien cercano (`personal_health`) → texto fijo de redirección a un profesional o a la línea de emergencias; la IA nunca da diagnósticos, medicamentos ni dosis. Si además hay señal de riesgo, manda BR-024.
 
 ## Datos de contraste (BR-030…BR-033)
 

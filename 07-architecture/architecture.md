@@ -7,7 +7,7 @@
 | Frontend | React + Vite + Tailwind + TypeScript | SPA mobile-first; estado del recorrido; render de `DataBadge` |
 | API | Bun + Hono + TypeScript + Zod | Endpoints REST, validación, consentimiento, rate limit |
 | Dominio | TypeScript puro | Motor de recomendación, reglas BR, guardas |
-| IA | `SimulationProvider` (LLM más guardas) | Narración, intención, explicaciones; fallback estático y caché |
+| IA | `SimulationProvider` (Gemini más guardas) | Narración, intención, explicaciones; fallback estático y caché |
 | Contenido | JSON semilla más Zod → PostgreSQL | Carreras, guiones, DataPoints, eventos, mentores |
 | Persistencia | PostgreSQL + Drizzle | Recorrido del estudiante, contenido, logs |
 | Observabilidad | Logs estructurados sin PII y `ai_turn_log` | Auditoría y depuración de la demo |
@@ -21,7 +21,7 @@ Coherente con el stack de la idea 1 (`docs-hackathon`, ADR-006) para reutilizar 
      │ HTTPS
 [Frontend React/Vite] ──► [API Hono]
                               ├─► Domain: matching · rules · guards
-                              ├─► SimulationProvider ──► LLM API
+                              ├─► SimulationProvider ──► Gemini API
                               │        └─ fallback: staticNarration / cache
                               ├─► ContentRepository (read-only)
                               └─► PostgreSQL (Drizzle)

@@ -11,7 +11,7 @@
 | NFR-007 | Privacidad | Los prompts al LLM no incluyen el alias, el colegio ni otro identificador; solo el contenido de la carrera y el texto del turno | Prueba de integración que inspecciona el payload |
 | NFR-008 | Seguridad | TLS en tránsito, secretos fuera del repositorio, rate limit por IP y por sesión en los endpoints de IA | Checklist de despliegue |
 | NFR-009 | Veracidad | El 100 % de las cifras visibles proviene de `DataPoint` con estado `verified` o se muestra como "por verificar" | Test de contrato sobre el render de la ficha |
-| NFR-010 | Disponibilidad demo | La demo completa funciona con el LLM caído (guion estático y caché) | Ensayo con la API key inválida |
+| NFR-010 | Disponibilidad demo | La demo completa funciona con el LLM caído (guion estático y caché) | Ensayo con `GEMINI_API_KEY` inválida |
 | NFR-011 | Costo | Tope de tokens por simulación (≈6 turnos × respuesta de 250 tokens o menos) y tope diario configurable | Config y métrica |
 | NFR-012 | Trazabilidad | Cada respuesta de la IA se registra con versión del prompt, carrera, escena y resultado de las guardas (sin PII) | Tabla `ai_turn_log` |
 | NFR-013 | Equidad | Mismas respuestas del test producen las mismas recomendaciones (determinismo) | Test unitario |

@@ -28,7 +28,8 @@
 
 ### IA
 - Sin PII en los prompts (NFR-007): el prompt se construye solo con el contenido de la carrera y el texto del turno; el prefiltro elimina correos y teléfonos del texto libre.
-- Revisar la política de retención de datos del proveedor del LLM y configurar sin entrenamiento con los datos si el proveedor lo permite.
+- Revisar los términos vigentes de la Gemini API sobre uso y retención de datos: en el nivel gratuito el contenido podría usarse para mejorar los productos de Google `[POR VERIFICAR en los términos de la Gemini API]`. Por eso el prompt nunca lleva PII; para un piloto con menores, evaluar el nivel de pago.
+- `GEMINI_API_KEY` solo en el servidor: nunca en el frontend, en el repo ni en los logs.
 - Rate limit en los endpoints de IA y tope diario de tokens.
 
 ### API e infraestructura

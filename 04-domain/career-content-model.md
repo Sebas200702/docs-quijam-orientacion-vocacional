@@ -6,16 +6,20 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
 
 ```jsonc
 {
-  "id": "enfermeria",
-  "name": "Enfermería",
+  "id": "medicina",
+  "name": "Medicina",
   "area": "salud",
   "level": "profesional",
   "durationLabel": "[DATO POR VERIFICAR — fuente sugerida: SNIES]",
-  "riasecProfile": { "R": 0.5, "I": 0.6, "A": 0.1, "S": 1, "E": 0.3, "C": 0.6 },
-  "summary": "Cuidas la salud de las personas en hospitales, centros de salud y comunidades, con turnos y trabajo en equipo.",
+  "riasecProfile": { "R": 0.5, "I": 0.9, "A": 0.1, "S": 1, "E": 0.3, "C": 0.6 },
+  "summary": "Previenes, diagnosticas y tratas enfermedades en urgencias, consulta, hospitalización y comunidades, con turnos y trabajo en equipo.",
   "curriculum": [
-    { "cycle": "1–4", "areaTags": ["ciencias básicas", "anatomía", "cuidado básico"],
-      "highlights": ["Prácticas desde los primeros semestres"], "surprising": ["Mucha química y farmacología"] }
+    { "cycle": "básico", "areaTags": ["ciencias básicas", "anatomía", "fisiología", "bioquímica"],
+      "highlights": ["Laboratorios y primeros contactos con pacientes"], "surprising": ["Mucha bioquímica, ética e investigación"] },
+    { "cycle": "clínico", "areaTags": ["rotaciones clínicas", "medicina interna", "pediatría", "cirugía"],
+      "highlights": ["Rotaciones por servicios de hospitales"], "surprising": ["Comunicar malas noticias también se estudia"] },
+    { "cycle": "internado", "areaTags": ["práctica hospitalaria supervisada"],
+      "highlights": ["Turnos reales bajo supervisión"], "surprising": ["Después viene el Servicio Social Obligatorio (año rural)"] }
   ],
   "dataPoints": [
     { "kind": "salario_enganche", "unit": "COP/mes", "value": null, "status": "draft",
@@ -23,14 +27,16 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
     { "kind": "vinculacion", "unit": "%", "value": null, "status": "draft",
       "suggestedSource": "Observatorio Laboral para la Educación (MEN)" },
     { "kind": "costo_semestre", "segment": "privada", "unit": "COP", "value": null, "status": "draft",
-      "suggestedSource": "SNIES / sitio oficial de cada institución" }
+      "suggestedSource": "SNIES / sitio oficial de cada institución" },
+    { "kind": "servicio_social_obligatorio", "unit": "meses", "value": null, "status": "draft",
+      "suggestedSource": "Ministerio de Salud" }
   ],
   "myths": [
-    { "myth": "Enfermería es solo poner inyecciones.",
-      "reality": "Incluye valorar pacientes, coordinar cuidados, educar familias y gestionar servicios." }
+    { "myth": "En Medicina todo es salvar vidas como en las series.",
+      "reality": "Buena parte del día es escuchar, examinar, escribir la historia clínica, explicar a las familias y coordinar con el equipo; las emergencias son una parte." }
   ],
   "studyOptions": [
-    { "institution": "[institución de Barranquilla]", "programName": "Enfermería", "level": "profesional",
+    { "institution": "[institución de Barranquilla]", "programName": "Medicina", "level": "profesional",
       "modality": "presencial", "sniesCode": null, "status": "draft" }
   ],
   "simulation": { "...": "ver 05-experiencias/simulacion-dia-en-la-carrera.md" },
@@ -52,7 +58,7 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
    - Resultados Saber 11 (si se llegan a usar): **ICFES**.
    - Pensum y costos: sitio oficial de la institución, con la fecha de consulta.
    - Oferta SENA: **SENA** (portal oficial de oferta educativa).
-4. **Diversidad:** los protagonistas de las 4 carreras del MVP alternan géneros y ninguno refuerza el estereotipo de su carrera (por ejemplo: un enfermero o una ingeniera son válidos; lo que no se hace es "Enfermería = mujer" en todas).
+4. **Diversidad:** los protagonistas de las 4 carreras del MVP alternan géneros y ninguno refuerza el estereotipo de su carrera (por ejemplo: un médico de urgencias y una ingeniera; lo que no se hace es "Medicina o Sistemas = hombre" ni poner siempre a las mujeres en el rol de apoyo).
 5. **Lenguaje:** máximo 2 líneas por highlight, sin jerga sin explicar.
 6. **Revisión:** `reviewedBy` lista quién verificó (rol, no nombre personal de estudiantes). En el MVP: Pitch Lead más un segundo miembro del equipo.
 
@@ -60,8 +66,8 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
 
 | Slug | Nombre | Nivel | Área | Simulación con IA en P0 |
 |------|--------|-------|------|-------------------------|
-| `enfermeria` | Enfermería | profesional | salud | Sí |
-| `ingenieria-sistemas` | Ingeniería de Sistemas | profesional | tecnología | Sí |
+| `ingenieria-sistemas` | Ingeniería de Sistemas | profesional | tecnología | Sí (la que el equipo domina) |
+| `medicina` | Medicina | profesional | salud | Sí (el otro extremo) |
 | `derecho` | Derecho | profesional | sociales | Guion estático (IA en P1) |
 | `tecnologia-gestion-logistica` | Tecnología en Gestión Logística | tecnólogo (SENA y otras) | logística | Guion estático (IA en P1) |
 

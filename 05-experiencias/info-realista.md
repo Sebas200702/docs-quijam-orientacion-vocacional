@@ -38,6 +38,7 @@ Preferimos no mostrarte un número que no hemos confirmado.
 
 ## Mitos y realidades — ejemplos (cualitativos)
 
+- **Medicina.** Mito: "Es salvar vidas todo el día, como en las series". Realidad: mucho del trabajo es escuchar, examinar, escribir la historia clínica, explicar a pacientes y familias y trabajar en equipo; antes de ejercer hay internado y Servicio Social Obligatorio (duraciones `[DATO POR VERIFICAR — fuente sugerida: SNIES / Ministerio de Salud]`).
 - **Ingeniería de Sistemas.** Mito: "Es estar solo frente al computador todo el día". Realidad: gran parte del trabajo es en equipo: reuniones, explicarle a clientes y revisar el código de otros.
 - **Derecho.** Mito: "Es estar en juicios como en las series". Realidad: mucho del trabajo es leer, redactar, negociar y asesorar; los juicios son una parte.
 - **Tecnología en Gestión Logística.** Mito: "Es solo cargar cajas". Realidad: es planear inventarios, rutas, tiempos y costos; en una ciudad portuaria conecta con puertos, bodegas y comercio exterior.

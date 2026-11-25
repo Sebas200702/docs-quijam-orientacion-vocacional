@@ -36,7 +36,7 @@ Por qué:
 1. Responde al reto con sus propias palabras: talento joven, oportunidades y calidad de vida.
 2. Los aliados del evento son la ruta de escala, lo que convierte la pregunta de viabilidad en un punto a favor.
 3. El equipo ya construyó piezas casi idénticas (Amelia, Manglara), así que en 20 horas se puede llegar más lejos que cualquier otro equipo.
-4. La demo tiene un momento memorable: "habla con una enfermera en su turno de noche antes de elegir la carrera".
+4. La demo tiene un momento memorable: "vive un turno de urgencias como médico antes de elegir la carrera".
 
 Cuándo usar el respaldo:
 - Si en "Comprender el reto" (09:45) la Alcaldía enfoca el reto en algo que deja por fuera la educación.
@@ -58,5 +58,5 @@ En cualquiera de los dos casos, se decide antes de las 11:30 (congelamiento de a
 
 1. Confirmar si Rumbo es la principal.
 2. Elegir el nombre: Rumbo, Ensaya, Un Día Como o Brújula Caribe.
-3. Elegir qué 2 de las 4 carreras llevan simulación completa con IA.
-4. Confirmar el proveedor de LLM y sus créditos.
+3. ~~Elegir qué 2 de las 4 carreras llevan simulación completa con IA.~~ Decidido: Ingeniería de Sistemas y Medicina.
+4. ~~Confirmar el proveedor de LLM.~~ Decidido: Gemini (Gemini API, ADR-006). Falta confirmar las cuotas del nivel gratuito para la demo.

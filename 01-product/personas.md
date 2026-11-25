@@ -5,10 +5,10 @@ Personas ficticias construidas por el equipo para diseñar y para la demo. No re
 ## P1 — Valentina Ortiz, 16 años, grado 11 (persona principal y de la demo)
 
 - **Contexto:** colegio oficial (IED) del suroccidente de Barranquilla. Vive con su mamá y su abuela. Tiene un Android de gama media con plan prepago; usa WhatsApp y TikTok a diario.
-- **Situación:** le van bien Biología y Química. Una tía es auxiliar de enfermería y le dice "estudia Enfermería, que eso tiene trabajo". No se inscribió a tiempo para el último evento vocacional de una universidad.
-- **Dudas:** "¿Me va a dar cosa la sangre?", "¿Los turnos son de noche?", "¿Puedo empezar en el SENA y después seguir?".
+- **Situación:** le van bien Biología y Química. Una tía trabaja como auxiliar en una clínica y le dice "tú que eres pila en Biología, estudia Medicina". No se inscribió a tiempo para el último evento vocacional de una universidad.
+- **Dudas:** "¿Me va a dar cosa la sangre?", "¿Cuántos años son de verdad y qué es eso del año rural?", "¿Cómo lo pagamos?", "Si no es Medicina, ¿qué otras rutas hay en salud?".
 - **Necesita:** vivir algo parecido a un día real, saber cuánto dura y cuánto cuesta, y tener argumentos para hablarlo con su mamá.
-- **Éxito:** termina comparando Enfermería con otra opción que no había considerado y escribe su porqué.
+- **Éxito:** termina comparando Medicina con otra opción que no había considerado y escribe su porqué.
 
 ## P2 — Andrés Molina, 15 años, grado 10
 
@@ -37,4 +37,4 @@ Personas ficticias construidas por el equipo para diseñar y para la demo. No re
 
 ## Escenario de la demo
 
-Valentina abre Rumbo un martes por la noche. Hace el test (≈6 min). Su top 3 es Enfermería, Derecho e Ingeniería de Sistemas, y "fuera de tu zona" le aparece Tecnología en Gestión Logística. Vive el turno de las 6:00 en Enfermería, pregunta cuánto se gana y la IA la remite a la ficha. Ve que el salario de enganche está marcado con su fuente. Guarda el próximo evento de puertas abiertas y le pregunta a una enfermera mentora "¿cómo manejas los turnos de noche?". Compara Enfermería con Sistemas y escribe: "Me gusta cuidar gente, pero quiero ver más de Sistemas antes de decidir". Comparte el resumen con su mamá.
+Valentina abre Rumbo un martes por la noche. Hace el test (≈6 min). Su top 3 es Medicina, Derecho e Ingeniería de Sistemas, y "fuera de tu zona" le aparece Tecnología en Gestión Logística. Vive el triage de las 7:00 en urgencias con Julián, médico general, pregunta cuánto gana un médico y la IA la remite a la ficha. Ve que el salario de enganche está marcado con su fuente y que la ficha le explica el internado y el año rural. Guarda el próximo evento de puertas abiertas y le pregunta a una médica mentora "¿cómo manejas los turnos de noche?". Compara Medicina con Sistemas y escribe: "Me gusta cuidar gente, pero quiero ver más de Sistemas antes de decidir". Comparte el resumen con su mamá.

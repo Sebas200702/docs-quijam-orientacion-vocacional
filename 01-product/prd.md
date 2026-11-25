@@ -57,10 +57,12 @@ Detalle en `02-requirements/`.
 
 Cuatro carreras con contenido curado, elegidas para cubrir áreas distintas y una ruta tecnológica:
 
-1. Enfermería (salud) — demo.
-2. Ingeniería de Sistemas (tecnología) — demo.
-3. Derecho (ciencias sociales).
-4. Tecnología en Gestión Logística (SENA; logística y puerto).
+1. Ingeniería de Sistemas (tecnología) — simulación completa con IA, demo.
+2. Medicina (salud) — simulación completa con IA, demo.
+3. Derecho (ciencias sociales) — ficha, info realista y guion estático.
+4. Tecnología en Gestión Logística (SENA; logística y puerto) — ficha, info realista y guion estático.
+
+Las dos simulaciones son dos extremos a propósito: una carrera que el equipo domina (realista y fácil de curar) y una lejana a la tecnología (muestra que el formato sirve para cualquier carrera). Ver `05-experiencias/simulacion-dia-en-la-carrera.md`.
 
 Se puede cambiar cualquiera, siempre que se mantengan una ruta técnica o tecnológica y la diversidad de áreas.
 

@@ -23,6 +23,7 @@ Un LLM puede inventar con seguridad salarios, tasas de empleo, materias o instit
 | Cifras | Regex: dígitos junto a `%`, `$`, `COP`, "millones", "mil pesos", "salario mínimo", "por ciento", y números escritos en letras más esas unidades | Texto estático más enlace a la ficha |
 | Entidades | Nombres de instituciones o empresas que no estén en la lista blanca del guion | Texto estático |
 | Imperativo de decisión | "deberías estudiar", "esta carrera es para ti", "no sirves para" | Texto estático |
+| Consejo médico | Dosis y unidades clínicas (mg, ml, gotas, "cada N horas"), "tómate", "te recomiendo tomar", "lo que tienes es" | Texto estático; si la entrada era de salud personal, texto fijo de redirección (FR-047) |
 | Longitud | Más de 180 palabras | Truncar en la última oración completa |
 | Riesgo | Clasificador más palabras clave | Protocolo de apoyo |
 

@@ -13,7 +13,7 @@ api/
       guards/      numbers.ts, entities.ts, imperatives.ts, risk.ts
     ai/
       simulation-provider.ts   (interfaz)
-      llm-provider.ts          (cliente LLM, prompt versionado)
+      llm-provider.ts          (cliente de la Gemini API, prompt versionado)
       static-provider.ts       (fallback)
       cache-provider.ts        (demo)
       prompts/simulation.v1.md
@@ -27,7 +27,7 @@ api/
 ## Servicios
 
 - **AssessmentService:** valida las 24 respuestas, calcula el perfil y las recomendaciones, y persiste si hay consentimiento.
-- **SimulationService:** máquina de estados `active → completed | abandoned`; avanza la escena con la decisión; delega la narración en el `SimulationProvider` (cadena: LLM → caché → estático).
+- **SimulationService:** máquina de estados `active → completed | abandoned`; avanza la escena con la decisión; delega la narración en el `SimulationProvider` (cadena: Gemini → caché → estático).
 - **CareerService:** compone la ficha aplicando `data-visibility` (BR-030…BR-033).
 - **QuestionService:** filtro de contactos → `pending` → moderación → `approved`/`answered`.
 - **JournalService:** vista de la bitácora, comparador, decisiones y enlaces para compartir.

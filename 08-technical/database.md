@@ -34,7 +34,7 @@ PostgreSQL + Drizzle. Nombres en snake_case. Los campos detallados están en `04
 
 ### Auditoría
 - `ai_turn_logs` (id, simulation_turn_id FK SET NULL, prompt_version, model, input_tokens, output_tokens, guard_results jsonb, created_at) — sin texto del estudiante.
-- `safety_events` (id, type ['risk_signal_shown','contact_blocked'], career_id, created_at) — sin student_id ni texto.
+- `safety_events` (id, type ['risk_signal_shown','health_redirect_shown','contact_blocked'], career_id, created_at) — sin student_id ni texto.
 
 ## Índices
 - `events(starts_at)`, GIN `events(career_ids)`

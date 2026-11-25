@@ -29,9 +29,9 @@ export const TurnInput = z.union([
   z.object({ freeText: z.string().trim().min(1).max(280) }),
 ]);
 
-export const SimulationTurnOutput = z.object({        // salida del LLM
+export const SimulationTurnOutput = z.object({        // salida de Gemini
   narration: z.string().min(1).max(1200),
-  intent: z.enum(["story", "question_answered", "data_request", "off_topic", "risk_signal"]),
+  intent: z.enum(["story", "question_answered", "data_request", "off_topic", "personal_health", "risk_signal"]),
   choicesShown: z.array(z.string()).max(3),
   linkToFicha: z.string().nullable(),
 });
