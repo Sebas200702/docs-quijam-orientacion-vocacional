@@ -1,0 +1,6 @@
+# Mantener fuera del repo de docs todo lo que no sea documentación
+/*
+!/.gitignore
+!/README.md
+!/0[0-9]-*/
+!/1[0-2]-*/
