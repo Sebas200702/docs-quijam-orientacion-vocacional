@@ -7,7 +7,7 @@ Comparamos las dos ideas del equipo frente al reto oficial para decidir cuál es
 | | Idea 1 | Idea 2 |
 |---|---|---|
 | Nombre | **Copiloto de Salud Financiera** | **Rumbo** (nombre de trabajo) — Orientación Vocacional |
-| Repo | `docs-hackathon` | `docs-quijam-orientacion-vocacional` |
+| Repo | `docs-hackathon` (otro repo) | `docs-quijam-orientacion-vocacional` (este repo) |
 | En una frase | Gestiona tu dinero sin convertirlo en otra tarea | Vive la carrera antes de elegirla |
 | Usuario | Universitarios y aprendices SENA con ingresos limitados | Estudiantes de grado 10.º y 11.º de Barranquilla |
 | Eje QuiJAM | Economía y oportunidades | Economía y oportunidades + talento joven (y datos para decidir) |
@@ -20,8 +20,8 @@ La escala va de 1 a 5. Es un **juicio del equipo**, no un dato, y se recalibra c
 |---|:-:|:-:|---|
 | Pertinencia al reto de la Alcaldía | 3 | **5** | El reto pide explícitamente "talento joven". Rumbo actúa justo antes del primer gran paso hacia el empleo; el Copiloto habla de finanzas personales, un ángulo menos directo de ciudad. |
 | Impacto en ciudadanos | 3 | **5** | Elegir mal una carrera tiene un costo alto y duradero en tiempo, dinero, deserción y frustración (`[DATO POR VERIFICAR — SPADIES/MEN]`). Rumbo llega a todos los colegios, mientras Descubre llega solo dos veces al año, por 2–3 días. |
-| Innovación y efecto sorpresa en la demo | 3 | **5** | Rumbo puede mostrar la "simulación de un día en la carrera" con un profesional virtual, con voz y avatar si da el tiempo. El Copiloto compite con funciones que ya existen en apps como los "bolsillos" de Nequi. |
-| Viabilidad y escala con aliados | 3 | **5** | La CUC, que creó Descubre, y la Alcaldía, que maneja los colegios oficiales, son **aliadas de QuiJAM**. Rumbo tiene una ruta de piloto natural; el Copiloto no tiene un aliado tan evidente. |
+| Innovación y efecto sorpresa en la demo | 3 | **5** | Rumbo muestra la "simulación de un día en la carrera" con texto y escenas ilustradas (voz con Gemini Live solo si da el tiempo, P1) y cierra con el panel de ciudad para la Alcaldía. El Copiloto compite con funciones que ya existen en apps como los "bolsillos" de Nequi. |
+| Viabilidad y escala con aliados | 3 | **5** | La CUC, que creó Descubre, y la Alcaldía, que maneja los colegios oficiales, son **aliadas de QuiJAM**. Rumbo tiene una ruta de piloto natural y un cliente claro (licencia B2G de la Secretaría de Educación, `01-product/prd.md` §13); el Copiloto no tiene un aliado tan evidente. |
 | Encaje con el equipo | 3 | **5** | Sebastián orienta aspirantes en la Beca Talento de la CUC. Sebastián y Santiago hicieron **Amelia**, un asistente para preuniversitarios, y **Manglara**, un avatar 3D con voz y RAG. Esteban modela en 3D. Es construir sobre experiencia propia. |
 | Riesgo de construcción en ~20 h efectivas | **4** | 3 | El Copiloto es más acotado (reglas y ledger simulado). Rumbo exige contenido curado de 4 carreras y una simulación con IA, aunque se mitiga con 2 simulaciones completas y respuestas cacheadas. |
 | Riesgo regulatorio o ético | **4** | 3 | Rumbo trata datos de **menores** (Ley 1581/2012, Ley 1098/2006). Se resuelve con datos mínimos, consentimiento del acudiente y conexión moderada, pero hay que defenderlo bien. |
@@ -50,13 +50,15 @@ En cualquiera de los dos casos, se decide antes de las 11:30 (congelamiento de a
 |---|---|---|
 | "Es otro test vocacional más" | Abrir el pitch con la **simulación**, no con el test. El test es solo la puerta de entrada. | Mateo + Esteban |
 | Cifras sin fuente | Verificar 3 cifras clave en SNIES, el Observatorio Laboral y SPADIES | Mateo |
-| Uso del nombre "Descubre" o de instituciones | Preguntar a la CUC o hablar de "eventos tipo Descubre"; plan en `10-operations/contingency.md` | Sebastián |
-| Simulación que alucina | Respuestas ancladas a contenido curado y cacheadas en el golden path (ADR-003) | Sebastián |
-| Datos de menores | Defender el diseño con datos mínimos y consentimiento (ADR-005) en `preguntas-jurado.md` | Sebastián + Mateo |
+| Uso del nombre "Descubre" o de instituciones | Preguntar a la CUC o hablar de "eventos tipo Descubre"; plan en `10-operations/contingency.md` (fila "La CUC no autoriza mencionar 'Descubre'") | Sebastián |
+| Simulación que alucina | Respuestas ancladas a contenido curado (`12-decisions/ADR-003-contenido-curado-grounding.md`) y cacheadas en el golden path (`05-experiencias/simulacion-dia-en-la-carrera.md` §Fallback y caché; `DEMO_MODE` en `10-operations/contingency.md`) | Sebastián |
+| Datos de menores | Defender el diseño con datos mínimos y consentimiento (`12-decisions/ADR-005-menores-datos-y-conexion.md`) con las respuestas 4 y 15 de `00-quijam/preguntas-jurado.md` | Sebastián + Mateo |
+| Panel de ciudad leído como datos reales | Rótulo "Datos sintéticos de demostración" y k ≥ 20 (`03-ux/panel-ciudad.md`) | Ángel + Mateo |
 
 ## Decisiones pendientes del equipo
 
 1. Confirmar si Rumbo es la principal.
 2. Elegir el nombre: Rumbo, Ensaya, Un Día Como o Brújula Caribe.
 3. ~~Elegir qué 2 de las 4 carreras llevan simulación completa con IA.~~ Decidido: Ingeniería de Sistemas y Medicina.
-4. ~~Confirmar el proveedor de LLM.~~ Decidido: Gemini (Gemini API, ADR-006). Falta confirmar las cuotas del nivel gratuito para la demo.
+4. ~~Confirmar el proveedor de LLM.~~ Decidido: Gemini (Gemini API, `12-decisions/ADR-006-technology-stack.md`). Falta confirmar las cuotas del nivel gratuito para la demo.
+5. ~~Sostenibilidad, panel de ciudad, presentación de la simulación y Conectar.~~ Decidido (2026-11-24): B2G con la Secretaría de Educación; panel de ciudad como cierre de la demo; texto con escenas ilustradas y voz opcional; Conectar con datos de ejemplo presentado como visión.

@@ -17,3 +17,6 @@
 | NFR-013 | Equidad | Mismas respuestas del test producen las mismas recomendaciones (determinismo) | Test unitario |
 | NFR-014 | Mantenibilidad | Contenido separado del código (JSON semilla validado con Zod) | Revisión |
 | NFR-015 | Retención | Los datos de los estudiantes se borran tras 12 meses de inactividad o a petición | Política documentada; job en P2 |
+| NFR-016 | Privacidad | Panel de ciudad: solo agregados con k ≥ 20 por celda, sin desglose por colegio ni por estudiante; la demo usa solo agregados sintéticos | Test unitario de k-anonimato (AC-17) y revisión del payload (SM-12) |
+| NFR-017 | Rendimiento | Ilustraciones de escena como archivos estáticos (SVG o WebP) de 100 KB o menos cada una, con carga diferida y fuera del bundle JS inicial | Tamaño del build y Lighthouse móvil |
+| NFR-018 | Privacidad | Los turnos con `risk_signal` o `personal_health` no persisten el texto libre del estudiante en ninguna tabla ni log | Test de integración SM-11 |

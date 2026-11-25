@@ -27,7 +27,7 @@ Personas ficticias construidas por el equipo para diseñar y para la demo. No re
 
 - **Contexto:** egresado de una universidad de Barranquilla; trabaja en una empresa de software local. Quiere devolver algo, pero tiene poco tiempo.
 - **Necesita:** responder preguntas cortas cuando pueda (de forma asíncrona) y, de vez en cuando, participar en una sesión grupal.
-- **Reglas:** verificado por una institución aliada; nunca recibe datos de contacto de los estudiantes; sus respuestas pasan por moderación.
+- **Reglas:** verificado por una institución aliada (P2; en el MVP los mentores son perfiles de ejemplo); nunca recibe datos de contacto de los estudiantes; sus respuestas pasan por moderación.
 
 ## P5 — Rosa Ortiz, acudiente de Valentina
 
@@ -35,6 +35,13 @@ Personas ficticias construidas por el equipo para diseñar y para la demo. No re
 - **Necesita:** autorizar de forma sencilla y recibir un resumen claro: qué exploró su hija, cuánto dura y cuánto cuesta cada opción, y alternativas de financiación o rutas SENA.
 - **No quiere:** que su hija comparta datos con desconocidos.
 
+## P6 — Diana Herrera, profesional de la Secretaría de Educación Distrital (cliente B2G)
+
+- **Contexto:** acompaña los programas de orientación socio-ocupacional de los colegios oficiales y prepara informes para la Alcaldía.
+- **Necesita:** saber qué quieren estudiar los jóvenes de 10 y 11 de la ciudad frente a los sectores con demanda laboral (puerto y logística, tecnología, salud…), para decidir dónde reforzar la orientación, las becas y los convenios con universidades y el SENA.
+- **No quiere:** datos de estudiantes individuales ni rankings de colegios; necesita poder defender el uso de los datos ante la Ley 1581.
+- **Éxito:** con el panel de ciudad identifica una brecha (por ejemplo, poco interés en logística frente a la demanda del puerto) y la lleva a una decisión de política.
+
 ## Escenario de la demo
 
-Valentina abre Rumbo un martes por la noche. Hace el test (≈6 min). Su top 3 es Medicina, Derecho e Ingeniería de Sistemas, y "fuera de tu zona" le aparece Tecnología en Gestión Logística. Vive el triage de las 7:00 en urgencias con Julián, médico general, pregunta cuánto gana un médico y la IA la remite a la ficha. Ve que el salario de enganche está marcado con su fuente y que la ficha le explica el internado y el año rural. Guarda el próximo evento de puertas abiertas y le pregunta a una médica mentora "¿cómo manejas los turnos de noche?". Compara Medicina con Sistemas y escribe: "Me gusta cuidar gente, pero quiero ver más de Sistemas antes de decidir". Comparte el resumen con su mamá.
+Valentina abre Rumbo un martes por la noche. Hace el test (≈6 min). Su top 3 es Medicina, Derecho e Ingeniería de Sistemas, y "fuera de tu zona" le aparece Tecnología en Gestión Logística. Vive el triage de las 7:00 en urgencias con Julián, médico general, pregunta cuánto gana un médico y la IA la remite a la ficha. Ve que el salario de enganche está marcado con su fuente y que la ficha le explica el internado y el año rural. Guarda el próximo evento de puertas abiertas (de ejemplo) y le pregunta a una médica mentora (perfil de ejemplo) "¿cómo manejas los turnos de noche?". Compara Medicina con Sistemas y escribe: "Me gusta cuidar gente, pero quiero ver más de Sistemas antes de decidir". Comparte el resumen con su mamá. Al cierre, Diana abre el panel de ciudad (datos sintéticos de demostración) y ve los intereses de los jóvenes frente a la demanda laboral de Barranquilla.

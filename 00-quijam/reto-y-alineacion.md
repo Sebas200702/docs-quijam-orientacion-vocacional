@@ -14,7 +14,10 @@ La entrega final debe "explicar el problema, presentar la solución y mostrar un
 
 Rumbo abre el primer camino hacia el empleo: elegir bien qué estudiar. Un joven que elige con información real llega a una formación que termina y que conecta con un empleo posible en su ciudad.
 
-Eje secundario: datos y tecnología ("Transforma datos en mejores decisiones"). Rumbo convierte datos oficiales dispersos (SNIES, Observatorio Laboral) en una decisión concreta de un estudiante de 16 años.
+Eje secundario: datos y tecnología ("Transforma datos en mejores decisiones. Conecta la tecnología con las necesidades de la ciudad."). Rumbo lo cumple en dos niveles:
+
+- **Estudiante:** convierte datos oficiales dispersos (SNIES, Observatorio Laboral) en una decisión concreta de un joven de 16 años.
+- **Ciudad:** el **panel de ciudad** (cierre de la demo) muestra a la Secretaría de Educación, en agregado y sin datos personales, los intereses vocacionales de los jóvenes frente a la demanda laboral de los sectores estratégicos de Barranquilla (puerto y logística, tecnología, salud…). En la demo usa datos sintéticos rotulados; ver `03-ux/panel-ciudad.md`.
 
 ## La necesidad real
 
@@ -35,19 +38,21 @@ Eje secundario: datos y tecnología ("Transforma datos en mejores decisiones"). 
 
 ## Aliados de QuiJAM como camino de escala
 
-- **Universidad de la Costa (CUC)** creó "Descubre" y es institución de QuiJAM. Rumbo no compite con Descubre: lo extiende. Antes del evento, el estudiante llega con una carrera explorada; después del evento, sigue en contacto. La agenda de Descubre aparece dentro de Rumbo. Hay que preguntar a la CUC si podemos usar el nombre "Descubre" en la demo; si no, lo mencionamos solo como ejemplo.
-- **Universidad Simón Bolívar, Universidad Autónoma del Caribe y la quinta institución** (logo "sergio", probablemente Sergio Arboleda, sin verificar) pueden publicar eventos y mentores en el mismo catálogo.
+- **Universidad de la Costa (CUC)** creó "Descubre" y es institución de QuiJAM. Rumbo no compite con Descubre: lo extiende. Antes del evento, el estudiante llega con una carrera explorada; después del evento, sigue en contacto. La agenda de Descubre podría aparecer dentro de Rumbo (en el prototipo es un evento de ejemplo). Hay que preguntar a la CUC si podemos usar el nombre "Descubre" en la demo; si no, lo mencionamos solo como ejemplo.
+- **Universidad Simón Bolívar, Universidad Autónoma del Caribe y la quinta institución** (logo "sergio", probablemente Sergio Arboleda, sin verificar) podrían publicar eventos y mentores en el mismo catálogo (en el prototipo, todos son datos de ejemplo).
 - **SENA / Tecnoparque**, organizador, aporta las rutas técnicas y tecnológicas que el estudiante debe ver al mismo nivel que las universitarias.
-- **Alcaldía de Barranquilla**, a cargo de los colegios oficiales, es el canal de escala: la Secretaría de Educación podría llevar Rumbo a las clases de orientación de grado 10 y 11 y recibir un panel agregado y anónimo (P1). Rumbo no reemplaza al orientador; le da tiempo y datos.
+- **Alcaldía de Barranquilla**, a cargo de los colegios oficiales, es el canal de escala y el cliente: la Secretaría de Educación licenciaría Rumbo para los colegios oficiales (B2G, gratis para el estudiante), lo llevaría a las clases de orientación de grado 10 y 11 y recibiría el panel de ciudad; cada orientador tendría su panel por colegio (P1). Camino: piloto en algunos colegios oficiales → evaluación → escala (`01-product/prd.md` §13). Rumbo no reemplaza al orientador; le da tiempo y datos. Hoy no existe ningún acuerdo con la Alcaldía.
+- **Universidades y SENA** entrarían como aliados de contenido gratuitos: publican eventos y validan su información, sin pagar nunca por aparecer en las recomendaciones.
 
 ## Talento joven
 
 - Lo construye un equipo joven con los cinco roles de QuiJAM.
 - El usuario es talento joven antes de entrar al mercado laboral.
-- Los mentores pueden ser egresados recientes de las universidades aliadas: talento joven que orienta a talento joven.
+- Los mentores podrían ser egresados recientes de las universidades aliadas: talento joven que orienta a talento joven (visión; en el prototipo son perfiles de ejemplo).
 
 ## Lo que no es
 
 - No es un test que dicta la carrera. La IA orienta; el estudiante decide (ADR-002).
 - No es un directorio de publicidad universitaria. Las universidades aparecen por la carrera, no porque paguen.
+- No es un sistema que vigile estudiantes. El panel de ciudad solo muestra agregados de 20 o más estudiantes y no influye en las recomendaciones.
 - No es una plataforma de chat entre adultos y menores. La conexión es moderada y grupal (ADR-005).

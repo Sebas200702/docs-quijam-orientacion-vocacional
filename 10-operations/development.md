@@ -21,13 +21,23 @@ bun run db:migrate
 bun run seed                     # valida y carga el contenido
 bun run dev                      # web + api
 bun test                         # Vitest
-bun run ai:eval                  # batería AI-01…AI-15 (usa Gemini real)
+bun run ai:eval                  # batería AI-01…AI-16 (usa Gemini real)
 bun run lint && bun run typecheck
 ```
 
 ## Variables de entorno
 
-`DATABASE_URL`, `GEMINI_API_KEY`, `GEMINI_MODEL`, `LLM_TIMEOUT_MS=8000`, `LLM_DAILY_TOKEN_CAP`, `SESSION_SECRET`, `ADMIN_KEY`, `DEMO_KEY`, `DEMO_MODE=true|false`, `WEB_ORIGIN`.
+`DATABASE_URL`, `GEMINI_API_KEY`, `GEMINI_MODEL`, `LLM_TIMEOUT_MS=8000`, `LLM_DAILY_TOKEN_CAP`, `SESSION_SECRET`, `ADMIN_KEY`, `DEMO_KEY`, `CITY_PANEL_KEY`, `DEMO_MODE=off|cache|static`, `WEB_ORIGIN`.
+
+`DEMO_MODE` (valor por defecto `off`) fija la cadena del `SimulationProvider` (`07-architecture/architecture.md` §`DEMO_MODE`):
+
+| Valor | Comportamiento |
+|-------|---------------|
+| `off` | Gemini en vivo → caché de la demo → texto estático |
+| `cache` | Sin llamadas a Gemini: caché de la demo por `hash(escena, decisión)` → texto estático |
+| `static` | Solo `staticNarration` y textos fijos |
+
+Cualquier otro valor hace fallar el arranque de la API (validación Zod de la configuración). Se cambia en las variables de Dokploy y se reinicia el contenedor (≈1 min); no hay toggle en caliente.
 
 Nota de Gemini: `GEMINI_API_KEY` es la llave de Google AI Studio y vive solo en el servidor (nunca en `apps/web`, en el repo ni en los logs). `GEMINI_MODEL` es un modelo de clase Flash; la versión exacta la fija el Arquitecto de IA en el evento.
 

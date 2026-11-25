@@ -10,6 +10,7 @@ Bienvenida → Onboarding → Test (24 ítems) → Resultados (top 3 + fuera de 
       → Conectar: evento ("Me interesa") + pregunta a mentora (moderación)
   → Carrera: Ing. de Sistemas → Vivir → Reflexión
   → Bitácora → Comparador (Medicina frente a Sistemas) → Mi decisión → Compartir resumen
+  → Cierre: Panel de ciudad (vista de la Secretaría, datos sintéticos) — F9
 ```
 
 ## F2 — "Tengo opciones en mente"
@@ -26,9 +27,9 @@ Escena → el estudiante escribe "¿cuánto gana?" → la guarda detecta la inte
 
 ## F5 — Señal de riesgo
 
-El estudiante escribe algo que indica angustia o riesgo → la guarda `risk_signal` pausa la simulación → mensaje de apoyo, líneas oficiales de ayuda y "habla con tu orientador o un adulto de confianza" → opción de seguir o salir. No se guarda el texto (solo el evento `risk_signal_shown`).
+El estudiante escribe algo que indica angustia o riesgo → la guarda `risk_signal` pausa la simulación → mensaje de apoyo, líneas oficiales de ayuda y "habla con tu orientador o un adulto de confianza" → opción de seguir o salir. No se guarda el texto: el turno queda con `free_text` nulo y solo se registra el evento `risk_signal_shown`.
 
-Variante de salud personal (simulación de Medicina): el estudiante pregunta por su propia salud o la de alguien cercano → texto fijo "no puedo darte consejos médicos" con la recomendación de consultar a un profesional de salud y la línea de emergencias → la simulación sigue. Solo se guarda el evento `health_redirect_shown` (FR-047).
+Variante de salud personal (simulación de Medicina): el estudiante pregunta por su propia salud o la de alguien cercano → texto fijo "no puedo darte consejos médicos" con la recomendación de consultar a un profesional de salud y la línea de emergencias → la simulación sigue. El turno queda con `free_text` nulo y solo se guarda el evento `health_redirect_shown` (FR-047).
 
 ## F6 — Consentimiento
 
@@ -41,3 +42,7 @@ El equipo (moderador) abre la cola → aprueba o rechaza la pregunta → el ment
 ## F8 — Acudiente
 
 Recibe el enlace del resumen → ve las carreras exploradas, las reflexiones, el comparador y la decisión → (P1) opciones de financiación y rutas SENA.
+
+## F9 — Panel de ciudad (Secretaría de Educación)
+
+`/ciudad` → clave del panel → rótulo "Datos sintéticos de demostración" → barras de interés frente a demanda por sector → filtro por grado → tarjeta "Brecha principal" → (opcional) abrir la ficha de la carrera relacionada en modo lectura. Sin acceso a ningún estudiante ni colegio. Detalle en `panel-ciudad.md`.

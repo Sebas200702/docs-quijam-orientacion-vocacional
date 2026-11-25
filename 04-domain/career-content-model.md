@@ -9,6 +9,7 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
   "id": "medicina",
   "name": "Medicina",
   "area": "salud",
+  "sectorId": "salud",
   "level": "profesional",
   "durationLabel": "[DATO POR VERIFICAR — fuente sugerida: SNIES]",
   "riasecProfile": { "R": 0.5, "I": 0.9, "A": 0.1, "S": 1, "E": 0.3, "C": 0.6 },
@@ -39,7 +40,9 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
     { "institution": "[institución de Barranquilla]", "programName": "Medicina", "level": "profesional",
       "modality": "presencial", "sniesCode": null, "status": "draft" }
   ],
-  "simulation": { "...": "ver 05-experiencias/simulacion-dia-en-la-carrera.md" },
+  "simulation": { "...": "ver 05-experiencias/simulacion-dia-en-la-carrera.md",
+    "genericIllustration": { "src": "/scenes/medicina/generica.webp", "alt": "Un médico de urgencias camina por el pasillo de una clínica" },
+    "scenes": [ { "order": 1, "illustration": { "src": "/scenes/medicina/1-triage.webp", "alt": "Sala de urgencias con tres pacientes esperando y un médico revisando la lista de triage" } } ] },
   "interestChips": ["cuidar personas", "ciencias"],
   "contentVersion": "2026-11-26.1",
   "reviewedBy": []
@@ -61,6 +64,8 @@ Cada carrera es un paquete JSON en `seed/careers/{slug}.json`, validado con Zod 
 4. **Diversidad:** los protagonistas de las 4 carreras del MVP alternan géneros y ninguno refuerza el estereotipo de su carrera (por ejemplo: un médico de urgencias y una ingeniera; lo que no se hace es "Medicina o Sistemas = hombre" ni poner siempre a las mujeres en el rol de apoyo).
 5. **Lenguaje:** máximo 2 líneas por highlight, sin jerga sin explicar.
 6. **Revisión:** `reviewedBy` lista quién verificó (rol, no nombre personal de estudiantes). En el MVP: Pitch Lead más un segundo miembro del equipo.
+7. **Ilustraciones:** una por escena más una genérica por carrera, como archivos estáticos (SVG o WebP, 100 KB o menos) con `alt` descriptivo. Personajes ficticios que siguen la regla de diversidad, sin logos, marcas ni lugares reales identificables y sin escenas clínicas explícitas. Pueden pregenerarse con IA antes del evento, siempre con revisión humana; nunca se generan en runtime (BR-027). El linter avisa si falta una ilustración de escena (se usa la genérica).
+8. **Sector:** cada carrera declara un `sectorId` para el panel de ciudad (Medicina → salud; Ingeniería de Sistemas → tecnología; Tecnología en Gestión Logística → puerto-logistica; Derecho → servicios-juridicos).
 
 ## Catálogo del MVP
 

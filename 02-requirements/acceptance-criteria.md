@@ -20,19 +20,20 @@ Formato Dado / Cuando / Entonces. Cada criterio debe tener al menos una prueba (
 ## AC-04 — Simulación completa (US-03, FR-040…FR-044)
 - **Dado** que la estudiante inicia la simulación de Medicina,
 - **cuando** recorre las 4 escenas eligiendo una decisión en cada una,
-- **entonces** cada escena muestra narración y entre 2 y 3 opciones, la consecuencia corresponde a la opción elegida
-- **y** al final se pide la reflexión (1–5), que se guarda en la bitácora.
+- **entonces** cada escena muestra su ilustración estática (con texto alternativo), la narración en texto y entre 2 y 3 opciones, la consecuencia corresponde a la opción elegida
+- **y** al final se pide la reflexión (1–5), que se guarda en la bitácora
+- **y** ninguna petición de red del recorrido llama a un servicio de generación de imágenes (FR-048).
 
 ## AC-05 — La IA no da cifras (US-04, FR-043)
 - **Dado** que la estudiante está en una simulación,
 - **cuando** escribe "¿cuánto gana un médico?" o una variante (sueldo, plata, salario, cuánto pagan),
 - **entonces** la respuesta no contiene números de dinero ni porcentajes
-- **y** contiene el enlace "Ver salario con fuente" a la ficha.
+- **y** contiene el enlace "Ver salario con fuente" a la ficha, construido por el servidor desde la lista blanca de anclas (`/carreras/{slug}/contrastar#salario`), nunca copiado de la salida del LLM.
 
 ## AC-06 — Fallback de la simulación (FR-045, NFR-010)
 - **Dado** que el LLM no responde en 8 s o devuelve un error,
 - **cuando** la estudiante elige una decisión,
-- **entonces** ve el texto estático de la consecuencia y puede seguir a la siguiente escena sin mensajes de error técnico.
+- **entonces** ve el texto estático de la consecuencia, con la misma ilustración de la escena, y puede seguir a la siguiente escena sin mensajes de error técnico.
 
 ## AC-07 — Dato por verificar (FR-051, FR-052, NFR-009)
 - **Dado** un `DataPoint` de salario con estado `draft`,
@@ -78,5 +79,18 @@ Formato Dado / Cuando / Entonces. Cada criterio debe tener al menos una prueba (
 - **cuando** escribe una pregunta sobre su propia salud ("me duele el pecho desde ayer, ¿qué me tomo?") o la de alguien cercano,
 - **entonces** ve el texto fijo de redirección (no generado por la IA), sin diagnóstico, sin nombres de medicamentos y sin dosis, con la recomendación de consultar a un profesional de salud y la línea de emergencias,
 - **y** se registra `safety_events.health_redirect_shown` sin texto
+- **y** la fila del turno en `simulation_turns` tiene `free_text` nulo (lo mismo para `risk_signal`, BR-024)
 - **y** puede seguir con la simulación.
 - **Dada** cualquier narración de la simulación de Medicina, **entonces** no contiene dosis ni indicaciones de tratamiento dirigidas al estudiante.
+
+## AC-16 — Panel de ciudad (FR-085, FR-087, FR-088)
+- **Dado** el seed sintético de la demo y la clave del panel,
+- **cuando** la Secretaría abre el panel de ciudad,
+- **entonces** ve, por sector, la barra de interés de los jóvenes junto a la barra de demanda laboral y la brecha entre ambas
+- **y** el rótulo "Datos sintéticos de demostración" es visible en la pantalla y viene en el payload (`dataOrigin: "synthetic"`)
+- **y** no aparece ningún alias, colegio ni identificador de estudiante.
+- **Dada** una petición sin clave del panel, **entonces** la API responde `401 UNAUTHENTICATED`.
+
+## AC-17 — k-anonimato del panel de ciudad (FR-086, BR-061)
+- **Dada** una celda con 19 estudiantes, **entonces** se muestra "Grupo muy pequeño para mostrar" sin valor y cuenta en `suppressedCells`.
+- **Dada** una celda con 20 estudiantes, **entonces** se muestra su valor.

@@ -8,7 +8,16 @@ El estudiante vive cuatro momentos de un día profesional como protagonista. No 
 
 - **Protagonista:** nombre, rol y lugar (por ejemplo, "Julián, médico general de urgencias en una clínica de Barranquilla"). No se nombra un hospital ni una empresa real.
 - **4 escenas** que cubren: rutina, reto técnico, lado humano o difícil, y cierre o crecimiento.
-- **Por escena:** `timeLabel`, `setting`, `situation`, 2–3 `choices` (cada una con su `consequence` y el `trait` que revela), `groundingFacts` (3–6 hechos cualitativos que la IA puede usar) y `staticNarration` (fallback completo).
+- **Por escena:** `timeLabel`, `setting`, `situation`, 2–3 `choices` (cada una con su `consequence` y el `trait` que revela), `groundingFacts` (3–6 hechos cualitativos que la IA puede usar), `staticNarration` (fallback completo) e `illustration` (archivo estático con `alt`).
+
+## Presentación: texto con escenas ilustradas (P0) y voz opcional (P1)
+
+Decisión del equipo (2026-11-24): "Texto con escenas ilustradas + voz opcional".
+
+- **P0, base de la demo:** cada escena muestra una ilustración estática y la narración en texto. Son 8 ilustraciones (4 de Sistemas y 4 de Medicina) más una genérica por carrera.
+- **Las ilustraciones se preparan antes**, no en vivo: se pueden pregenerar con IA, una persona las revisa (diversidad, sin marcas ni lugares reales, sin escenas clínicas explícitas) y se sirven como archivos estáticos desde `apps/web/public/scenes/`. Ningún paso del golden path depende de un servicio de generación de imágenes (FR-048, BR-027).
+- **La ilustración no cambia con el fallback:** si Gemini falla, cambia solo la fuente del texto (`static` o `cache`).
+- **P1, solo si el P0 está verde:** voz del profesional virtual con Gemini Live (FR-049), apagada por defecto y con el texto siempre en pantalla. Si falla, la escena sigue en texto. El guion de demo no la necesita.
 
 ## Por qué Ingeniería de Sistemas y Medicina
 
@@ -75,15 +84,17 @@ Protagonista: **Andrea, desarrolladora** en una empresa de software de Barranqui
   "narration": "Llegas a urgencias. El médico de la noche te entrega el turno...",
   "intent": "story | question_answered | data_request | off_topic | personal_health | risk_signal",
   "choicesShown": ["c1", "c2", "c3"],
-  "linkToFicha": null
+  "dataKind": null
 }
 ```
+
+`dataKind` (`pensum | duracion | costo | salario | empleabilidad | donde_estudiar | null`) solo indica el tema cuando `intent` es `data_request`. **La IA no devuelve enlaces:** el servidor construye `linkToFicha` con el `slug` de la simulación y la lista blanca de anclas (BR-026). Un campo extra como `linkToFicha` o una URL dentro de la narración se descartan (Zod en modo estricto y guarda de URLs).
 
 **Reglas del prompt de sistema** (resumen; texto completo en el repo de código, versionado):
 
 1. Narra en segunda persona, en español neutro con calidez caribeña, en 120 palabras como máximo.
 2. Usa solo `situation`, `consequence` y `groundingFacts`. Si te preguntan algo fuera de eso, di que no lo sabes y sugiere preguntarle a un mentor.
-3. Nunca des cifras (dinero, porcentajes, años, cantidades de empleo). Si te las piden, usa `intent: data_request`.
+3. Nunca des cifras (dinero, porcentajes, años, cantidades de empleo). Si te las piden, usa `intent: data_request` y el `dataKind` del tema. No escribas enlaces ni URLs.
 4. No juzgues la decisión como correcta o incorrecta; muestra su consecuencia y lo que revela.
 5. No digas al estudiante qué carrera estudiar ni si "sirve" para ella.
 6. No asumas el género del estudiante; el protagonista es el personaje del guion.
@@ -93,12 +104,15 @@ Protagonista: **Andrea, desarrolladora** en una empresa de software de Barranqui
 
 ## Guardas posteriores (deterministas, `06-ai/grounding-y-alucinaciones.md`)
 
-Validación del esquema → detector de cifras → detector de imperativos de decisión ("deberías estudiar") → detector de consejo médico (dosis, "tómate", "te recomiendo tomar") → longitud. Si alguna falla, se usa `staticNarration` o la `consequence` del guion. Se registra en `AiTurnLog`.
+Validación del esquema → detector de cifras → detector de URLs → detector de imperativos de decisión ("deberías estudiar") → detector de consejo médico (dosis, "tómate", "te recomiendo tomar") → longitud → derivación de `linkToFicha` en el servidor (BR-026). Si alguna falla, se usa `staticNarration` o la `consequence` del guion. Se registra en `AiTurnLog`.
+
+**Turnos de riesgo o de salud personal:** si el prefiltro o la salida de Gemini marcan `risk_signal` o `personal_health`, se responde con el texto fijo, el turno se guarda con `freeText = null` y `source: fixed`, y solo queda el evento en `safety_events` (BR-024, BR-025).
 
 ## Fallback y caché
 
 - **Timeout de 8 s o error** → texto estático (FR-045).
 - **Demo:** las respuestas del recorrido exacto de la demo se precalculan y se guardan en caché por `hash(escena, decisión)`; si Gemini falla en el escenario, se sirven desde caché (`source: cache`).
+- **`DEMO_MODE`** (`off | cache | static`, definido en `10-operations/development.md`) fija la cadena: `off` = Gemini → caché → estático; `cache` = caché → estático, sin llamar a Gemini; `static` = solo textos del guion. Los textos fijos de riesgo y salud aplican en los tres modos.
 
 ## Reflexión final
 

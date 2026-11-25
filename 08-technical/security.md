@@ -17,13 +17,15 @@
 
 ### Minimización y finalidad
 - Solo alias, grado, año de nacimiento, colegio opcional y el recorrido.
-- Finalidad única: orientación vocacional del propio estudiante. Sin uso comercial, sin venta y sin compartir con instituciones.
-- Los agregados para orientadores y la Secretaría son solo grupales (k ≥ 5).
+- Finalidad principal: orientación vocacional del propio estudiante. Finalidad secundaria, declarada en la política y en la pantalla de autorización: estadística agregada y anónima para la planeación educativa de la Secretaría de Educación (panel de ciudad). Sin uso comercial, sin venta y sin compartir datos individuales con instituciones.
+- Los agregados son solo grupales: k ≥ 5 dentro de un colegio para el panel del orientador (P1) y k ≥ 20 por celda para el panel de ciudad (BR-061), sin desglose por colegio.
+- En la demo, el panel de ciudad usa solo agregados sintéticos rotulados; no hay datos de estudiantes reales.
 
 ### Autenticación y autorización
 - Sesión con cookie `httpOnly`, `Secure` y `SameSite=Lax`; rotación al crear el perfil.
 - Un estudiante solo accede a su propio recorrido (filtro por `student_id` de la sesión en cada consulta).
 - Admin/moderación: clave del equipo en una variable de entorno (MVP) → roles en P2.
+- Panel de ciudad: clave propia (`CITY_PANEL_KEY`) en la cabecera `X-Panel-Key`, distinta de `ADMIN_KEY`; nunca en la URL. P2: rol institucional de la Secretaría.
 - Enlaces para compartir: token aleatorio de 128 bits, guardado como hash, que expira a los 7 días y se puede revocar.
 
 ### IA
@@ -37,6 +39,8 @@
 - TLS terminado en el proxy de Dokploy (Traefik).
 - Secretos en variables de entorno de Dokploy, nunca en el repositorio.
 - Logs estructurados sin alias, texto libre ni IP completa (IP truncada para el rate limit).
+- Turnos con `risk_signal` o `personal_health`: el texto libre no se persiste en `simulation_turns` (CHECK en BD), ni en `ai_turn_logs`, ni en `safety_events`, ni en logs (NFR-018).
+- `linkToFicha` se construye en el servidor desde una lista blanca; ninguna URL de la salida del LLM llega al frontend (BR-026).
 - CORS restringido al dominio del frontend.
 - Cabeceras: CSP básica, `X-Content-Type-Options` y `Referrer-Policy: no-referrer` (para no filtrar el token del resumen).
 

@@ -4,6 +4,8 @@
 
 Pasar de lo simulado a lo humano: eventos reales todo el año y preguntas a quien vive la carrera, de forma segura para menores.
 
+**Estado en el MVP:** todo Conectar funciona con **datos de ejemplo** rotulados "Ejemplo" en la UI y se presenta en el pitch como visión. Hoy no hay mentores reales ni acuerdos con universidades, el SENA o la Alcaldía.
+
 ## Agenda de eventos
 
 - **Tipos:** puertas abiertas, Descubre (CUC) o experiencias similares de otras universidades, ferias universitarias, charlas y talleres SENA y visitas a empresas.
@@ -30,7 +32,7 @@ Las fechas del seed son ficticias y relativas a la fecha de la demo (próximas 8
 
 - **Perfil:** nombre de pila, cargo, carrera, institución que lo verifica, frase "lo que nadie te cuenta" y años de experiencia (opcional).
 - **Verificación (P2):** la institución aliada confirma su identidad y su formación; el mentor acepta un código de conducta (no pedir contactos, no ofrecer servicios, no publicidad).
-- **MVP:** 4 perfiles de ejemplo (uno por carrera), rotulados. Si alguien del equipo conoce profesionales reales que acepten, se pueden usar sus respuestas reales con su consentimiento escrito.
+- **MVP:** 4 perfiles de ejemplo (uno por carrera), rotulados "Perfil de ejemplo", con respuestas precargadas rotuladas "Respuesta de ejemplo". Después del evento, si profesionales reales aceptan, se podrán usar sus respuestas con su consentimiento escrito.
 
 ## Preguntas a mentores
 

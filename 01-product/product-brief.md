@@ -29,15 +29,16 @@ Rumbo permite a estudiantes de grado 10 y 11 de Barranquilla vivir un día simul
 
 - **Principal:** estudiante de grado 10 u 11 de un colegio de Barranquilla, con énfasis en colegios oficiales.
 - **Secundarios:** acudiente (autoriza y conversa), orientador escolar (acompaña), profesional mentor y universidad o SENA (publican eventos y responden preguntas).
+- **Cliente:** Secretaría de Educación Distrital de Barranquilla, que licencia Rumbo para los colegios oficiales y usa el panel de ciudad.
 
 ## Solución: el loop
 
 **Explorar → Vivir → Contrastar → Conectar → Decidir con fundamento**
 
 1. **Explorar:** test vocacional corto y recomendación explicada (top 3 más una opción fuera de su zona).
-2. **Vivir:** simulación "un día en la carrera" guiada por IA, con escenas y decisiones.
+2. **Vivir:** simulación "un día en la carrera" guiada por IA: texto con una ilustración por escena y decisiones. La voz es opcional (P1).
 3. **Contrastar:** ficha realista con pensum, salario de enganche, empleabilidad, duración, costo y dónde estudiarla en Barranquilla, con fuente o con la marca "dato por verificar".
-4. **Conectar:** agenda de eventos de universidades y SENA disponible todo el año, y preguntas moderadas a mentores verificados.
+4. **Conectar:** agenda de eventos de universidades y SENA disponible todo el año, y preguntas moderadas a mentores. En el prototipo son datos de ejemplo rotulados; la verificación de mentores por las instituciones es visión (P2).
 5. **Decidir:** bitácora, comparador y "mi decisión", escrita por el estudiante, con un resumen compartible.
 
 ## Diferenciador
@@ -46,10 +47,21 @@ Rumbo permite a estudiantes de grado 10 y 11 de Barranquilla vivir un día simul
 - Honestidad de datos visible en el producto: fuente, fecha o "por verificar".
 - La IA orienta y nunca decide; la recomendación es explicable y determinista.
 - Rutas técnicas y tecnológicas (SENA) al mismo nivel que las profesionales.
+- Panel de ciudad: la Alcaldía ve, en agregado y sin datos personales, qué quieren estudiar sus jóvenes frente a lo que demanda la ciudad.
+
+## Modelo de sostenibilidad
+
+- **Quién paga:** la Secretaría de Educación de Barranquilla (B2G), con una licencia para los colegios oficiales. Gratis para el estudiante.
+- **Qué recibe:** la plataforma para sus estudiantes de 10 y 11, el panel de ciudad y, en P1, el panel de orientación por colegio.
+- **Costos principales:** uso de Gemini, hosting y curaduría de contenido. Montos: `[DATO POR VERIFICAR — se calculan en el piloto]`.
+- **Camino:** piloto en N colegios oficiales → evaluación → escala distrital.
+- **Universidades y SENA:** aliados de contenido gratuitos; nunca pagan por aparecer en las recomendaciones.
+
+Detalle en `prd.md` §13.
 
 ## Objetivo en QuiJAM
 
-Responder al reto ("tecnología, innovación y talento joven para mejorar la calidad de vida de los ciudadanos de Barranquilla") en el eje Economía y oportunidades, con un prototipo que recorra el loop completo para una estudiante y dos carreras en menos de 5 minutos.
+Responder al reto ("tecnología, innovación y talento joven para mejorar la calidad de vida de los ciudadanos de Barranquilla") en el eje Economía y oportunidades (con el eje de datos, "Transforma datos en mejores decisiones", como secundario), con un prototipo que recorra el loop completo para una estudiante y dos carreras y cierre con el panel de ciudad, en menos de 5 minutos.
 
 ## Métricas que mediríamos (no medidas aún)
 

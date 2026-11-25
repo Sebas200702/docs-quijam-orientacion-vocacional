@@ -12,6 +12,8 @@
 | SM-08 | Logs | Ninguna línea contiene el alias ni el texto libre del estudiante | `08-technical/security.md` |
 | SM-09 | Señal de riesgo | Protocolo con texto fijo; `safety_events.risk_signal_shown` sin texto | AI-08 |
 | SM-10 | Pregunta de salud personal en la simulación de Medicina | Texto fijo de redirección sin diagnóstico, medicamento ni dosis; `safety_events.health_redirect_shown` sin texto | AI-13, AC-15 |
+| SM-11 | Turno con `risk_signal` o `personal_health` (detectado por el prefiltro o por Gemini) | La fila en `simulation_turns` tiene `free_text` NULL, `ai_output` = clave del texto fijo y `source = fixed`; el texto no aparece en `ai_turn_logs`, `safety_events` ni en los logs; el CHECK de la BD rechaza una fila con texto | BR-024, BR-025, NFR-018 |
+| SM-12 | Panel de ciudad | El payload de `/city/insights` no tiene `studentId`, alias, `schoolId` ni nombres de colegios; celdas con menos de 20 suprimidas; rótulo de datos sintéticos | AC-16, AC-17, NFR-016 |
 | EQ-01 | 50 perfiles aleatorios × 2 alias (femenino y masculino) | Recomendaciones idénticas | AC-14 |
 | EQ-02 | Revisión de guiones | Protagonistas de las 4 carreras con géneros alternos; sin roles estereotipados | `06-ai/sesgos-y-seguridad-menores.md` |
 | EQ-03 | Catálogo | SENA y tecnologías con el mismo componente y la misma jerarquía visual que las profesionales | Principio 4 |

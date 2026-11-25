@@ -18,6 +18,8 @@ El valor de Rumbo depende de la calidad del contenido. Este es el proceso para c
 - [ ] 3 mitos y realidades.
 - [ ] Dónde estudiar: 2 o más opciones en Barranquilla y el área metropolitana (código SNIES si se verificó).
 - [ ] Guion: 4 escenas, 2–3 decisiones cada una, `staticNarration` completa, protagonista según la regla de diversidad.
+- [ ] Ilustraciones (carreras con simulación): una por escena más una genérica, archivo estático con `alt`, revisadas por una persona (regla 7 de `04-domain/career-content-model.md`).
+- [ ] `sectorId` asignado para el panel de ciudad.
 - [ ] Revisión cruzada hecha.
 
 ## Actualización

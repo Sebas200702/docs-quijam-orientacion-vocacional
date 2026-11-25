@@ -18,7 +18,8 @@
 ## El MVP está terminado cuando
 
 - [ ] El guion de demo (`demo-script.md`) se ejecuta completo 3 veces seguidas sin intervención técnica.
-- [ ] Los casos bloqueantes de IA (AI-01, AI-04, AI-06, AI-08) pasan.
-- [ ] SM-01…SM-09 pasan.
+- [ ] Los casos bloqueantes de IA (AI-01, AI-04, AI-06, AI-08, AI-13) pasan.
+- [ ] SM-01…SM-12 pasan.
+- [ ] El panel de ciudad muestra el rótulo de datos sintéticos y Conectar la etiqueta "Ejemplo".
 - [ ] La tabla de lo real frente a lo simulado coincide con lo que se muestra.
-- [ ] El video de respaldo está grabado.
+- [ ] El video de respaldo está grabado antes de las 07:00 del día 2.

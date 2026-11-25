@@ -8,12 +8,13 @@ Construible en la ventana de QuiJAM (≈19 h 30 min de construcción efectiva y 
 2. Onboarding corto (intereses, materias, ruta).
 3. Test de 24 ítems, motor determinista, top 3 explicado más 1 fuera de zona.
 4. Catálogo de 4 carreras: Ingeniería de Sistemas, Medicina, Derecho y Tecnología en Gestión Logística (SENA).
-5. Simulación con IA de 4 escenas para **Ingeniería de Sistemas y Medicina** (la que dominamos y el otro extremo), con fallback estático. Derecho y Logística tienen ficha, info realista y guion estático.
+5. Simulación con IA de 4 escenas para **Ingeniería de Sistemas y Medicina** (la que dominamos y el otro extremo), con fallback estático. Presentación: **texto con una ilustración estática por escena**, pregenerada antes de la demo; sin generación de imágenes en runtime (FR-048). Derecho y Logística tienen ficha, info realista y guion estático.
 6. Ficha Contrastar completa para las 4 carreras (con fuente o "por verificar").
-7. Agenda (8 eventos de ejemplo) y mentores (4 de ejemplo) con preguntas moderadas.
+7. Agenda (8 eventos de ejemplo) y mentores (4 de ejemplo) con preguntas moderadas, todo con la etiqueta "Ejemplo" visible. En el pitch se presenta como visión.
 8. Bitácora, comparador, mi decisión y resumen compartible.
 9. Pantalla de consentimiento del acudiente (envío simulado).
-10. Guardas de IA: sin cifras, sin PII en prompts, señales de riesgo y sin consejo médico (FR-047).
+10. Guardas de IA: sin cifras, sin PII en prompts, señales de riesgo y sin consejo médico (FR-047); enlace a la ficha construido por el servidor.
+11. **Panel de ciudad** para la Secretaría de Educación, con seed de agregados sintéticos rotulados y k ≥ 20 (FR-085…FR-088). Es el cierre de la demo.
 
 ## P1 — Si sobra tiempo o justo después del evento
 
@@ -23,14 +24,14 @@ Construible en la ventana de QuiJAM (≈19 h 30 min de construcción efectiva y 
 4. Repetir el test e historial.
 5. Rutas de continuidad y financiación.
 6. Retomar una simulación.
-7. Voz del profesional virtual con Gemini Live API (voz en tiempo real), si el P0 está verde. El equipo ya la usó en producción (Manglara).
+7. Voz opcional del profesional virtual con Gemini Live API (voz en tiempo real), solo si el P0 está verde (FR-049). El texto con ilustraciones sigue siendo la base y la demo no depende de la voz. El equipo ya usó Gemini Live en producción (Manglara).
 
 ## P2 — Posterior
 
 1. Ingesta automática de SNIES y Observatorio Laboral.
 2. Más de 20 carreras, con contenido validado por las universidades y el SENA.
 3. Consentimiento real del acudiente (OTP por SMS o correo) y verificación de mentores por la institución.
-4. Despliegue multi-colegio con la Secretaría de Educación.
+4. Despliegue multi-colegio con la Secretaría de Educación (licencia B2G, `01-product/prd.md` §13) y panel de ciudad con datos reales agregados.
 5. Canal WhatsApp o modo offline (PWA).
 6. Evaluación de impacto (permanencia en el primer año).
 
@@ -39,14 +40,17 @@ Construible en la ventana de QuiJAM (≈19 h 30 min de construcción efectiva y 
 | Componente | En la demo | Nota para el jurado |
 |------------|-----------|---------------------|
 | Test y motor de recomendación | **Real** | Determinista y explicable |
-| Simulación con Gemini (Sistemas y Medicina) | **Real** | Con caché de respaldo para el guion de la demo |
+| Simulación con Gemini (Sistemas y Medicina) | **Real** | Con caché de respaldo para el guion de la demo (`DEMO_MODE`) |
 | Guiones de escenas | **Real**, escritos por el equipo | Revisar con profesionales después del evento |
+| Ilustraciones de las escenas | **Real**, archivos estáticos pregenerados | Personajes ficticios; no se generan en vivo |
+| Voz del profesional virtual | No (P1); solo si quedó lista | La demo no depende de ella |
 | Datos de la ficha (pensum, salario, empleabilidad) | **Real si están verificados**; si no, se muestra "por verificar" | Curados a mano desde las fuentes oficiales; nunca inventados |
 | Instituciones donde se estudia | Real (nombres públicos) | Confirmar la oferta vigente en SNIES |
 | Eventos de la agenda | **Simulado** (datos de ejemplo) | Las fechas reales de Descubre y otros eventos `[POR VERIFICAR con cada institución]` |
-| Mentores | **Simulado** (perfiles ficticios rotulados "ejemplo") | P2: verificados por la institución |
+| Mentores | **Simulado** (perfiles ficticios rotulados "Ejemplo") | No hay mentores ni alianzas reales; P2: verificados por la institución |
 | Respuestas de mentores | **Simulado** (precargadas) | Una pregunta nueva queda en moderación |
 | Consentimiento del acudiente | **Simulado** (no se envía el mensaje) | El flujo y el bloqueo en la API sí son reales |
+| Panel de ciudad | **Cálculo real** (agregados, k ≥ 20) sobre **datos sintéticos** rotulados | Datos reales solo en un piloto con autorización y finalidad declarada |
 | Panel del orientador | No (P1); como mucho una captura | |
 | Bitácora, comparador y resumen | **Real** | |
 

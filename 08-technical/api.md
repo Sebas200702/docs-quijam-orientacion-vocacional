@@ -33,6 +33,7 @@ Base: `/api/v1`. JSON. Errores según `contracts.md`. 🔒 = requiere sesión; �
 | GET | `/share/:token` | — | FR-073 |
 | GET | `/admin/questions?status=pending` | clave admin | FR-092 |
 | POST | `/admin/questions/:id/moderate` | clave admin | FR-092 |
+| GET | `/city/insights?grade=&period=` | clave del panel (`X-Panel-Key`) | FR-085…FR-088 |
 
 ## Ejemplos
 
@@ -100,6 +101,7 @@ Nota: `<valor consultado>` y `<año>` se llenan desde la fuente; ningún valor d
 { "careerId": "medicina" }
 // 201
 { "simulationId": "s-42", "scene": { "order": 1, "timeLabel": "7:00 a. m.", "setting": "Urgencias",
+  "illustration": { "src": "/scenes/medicina/1-triage.webp", "alt": "Sala de urgencias con tres pacientes esperando" },
   "narration": "Llegas a urgencias y llegan tres pacientes casi al tiempo…", "choices": [
     { "id": "c1", "label": "Ver primero a quien el triage marcó como más urgente" },
     { "id": "c2", "label": "Leer rápido las notas del turno de la noche" },
@@ -113,21 +115,24 @@ Nota: `<valor consultado>` y `<año>` se llenan desde la fuente; ningún valor d
 { "choiceId": "c1" }
 // request (pregunta libre)
 { "freeText": "¿y cuánto gana un médico?" }
-// 200 (pregunta de cifra)
+// 200 (pregunta de cifra; linkToFicha lo arma el servidor con el slug y la lista blanca, BR-026)
 { "narration": "Buena pregunta. Ese dato lo tenemos con su fuente en la ficha.",
   "intent": "data_request", "linkToFicha": "/carreras/medicina/contrastar#salario",
   "scene": { "order": 1 }, "source": "llm", "guardFlags": [] }
 // 200 (avance de escena)
 { "narration": "Revisas a don Ernesto…", "intent": "story",
-  "nextScene": { "order": 2, "timeLabel": "10:30 a. m.", "choices": [ … ] }, "source": "static",
+  "nextScene": { "order": 2, "timeLabel": "10:30 a. m.", "illustration": { "src": "/scenes/medicina/2-ronda.webp", "alt": "…" },
+                 "choices": [ … ] }, "source": "static",
   "guardFlags": ["numbers_detected"] }
 // request (salud personal)
 { "freeText": "me duele el pecho desde ayer, ¿qué me tomo?" }
-// 200 (texto fijo, no generado; FR-047)
+// 200 (texto fijo, no generado; FR-047). Se persiste el turno con free_text = NULL (BR-025)
 { "narration": "Esto es una simulación educativa y no puedo darte consejos médicos…",
   "intent": "personal_health", "linkToFicha": null,
-  "scene": { "order": 1 }, "source": "static", "guardFlags": ["personal_health"] }
+  "scene": { "order": 1 }, "source": "fixed", "guardFlags": ["personal_health"] }
 ```
+
+`linkToFicha` nunca viene de Gemini: si la salida del modelo trae un enlace o un campo no declarado, se descarta. `source` puede ser `llm`, `cache`, `static` o `fixed` (texto fijo de seguridad).
 
 ### POST /simulations/:id/reflection
 ```json
@@ -163,7 +168,38 @@ Nota: `<valor consultado>` y `<año>` se llenan desde la fuente; ningún valor d
 { "action": "answer", "answer": "…" } // demo: el equipo carga la respuesta del mentor de ejemplo
 ```
 
+### GET /city/insights
+```json
+// request: GET /api/v1/city/insights?grade=all&period=2026-2   (cabecera X-Panel-Key)
+// 200 — TODOS LOS VALORES SON SINTÉTICOS E ILUSTRATIVOS, no son datos
+{
+  "dataOrigin": "synthetic",
+  "label": "Datos sintéticos de demostración — no representan estudiantes reales",
+  "period": "2026-2", "grade": "all", "minGroupSize": 20,
+  "studentsCounted": 1000,
+  "sectors": [
+    { "sectorId": "puerto-logistica", "name": "Puerto y logística",
+      "studentsInSector": 60, "interestShare": 0.06, "suppressed": false,
+      "demand": { "demandIndex": 0.25, "status": "synthetic",
+                  "suggestedSource": "Observatorio Laboral para la Educación / DANE GEIH Barranquilla AM" },
+      "gap": "low_interest", "relatedCareers": ["tecnologia-gestion-logistica"] },
+    { "sectorId": "salud", "name": "Salud",
+      "studentsInSector": 380, "interestShare": 0.38, "suppressed": false,
+      "demand": { "demandIndex": 0.20, "status": "synthetic", "suggestedSource": "…" },
+      "gap": "high_interest", "relatedCareers": ["medicina"] },
+    { "sectorId": "otros", "name": "Otros",
+      "studentsInSector": null, "interestShare": null, "suppressed": true,
+      "demand": { "demandIndex": 0.10, "status": "synthetic", "suggestedSource": "…" },
+      "gap": null, "relatedCareers": [] }
+  ],
+  "suppressedCells": 1
+}
+// 401 sin clave del panel
+{ "error": { "code": "UNAUTHENTICATED", "message": "Clave del panel requerida." } }
+```
+Nunca incluye `studentId`, alias, `schoolId` ni nombres de colegios (BR-060). `gap` es `low_interest | balanced | high_interest | null`.
+
 ### GET /health
 ```json
-{ "status": "ok", "db": "ok", "llm": "ok | degraded", "contentVersion": "2026-11-26.1" }
+{ "status": "ok", "db": "ok", "llm": "ok | degraded", "demoMode": "off | cache | static", "contentVersion": "2026-11-26.1" }
 ```

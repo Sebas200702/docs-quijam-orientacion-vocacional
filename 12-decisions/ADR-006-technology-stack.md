@@ -11,7 +11,8 @@ Equipo de 5 personas, unas 19,5 h de construcción. La idea 1 (`docs-hackathon`,
 - **Backend:** Bun + Hono + TypeScript; Zod para los contratos compartidos.
 - **Datos:** PostgreSQL + Drizzle.
 - **IA:** Gemini vía la **Gemini API**, con llave de Google AI Studio guardada solo en el servidor (`GEMINI_API_KEY`). Un modelo de clase Flash para la narración de la simulación, la clasificación de intención y las explicaciones del test; la versión exacta la fija el Arquitecto de IA en el evento (`GEMINI_MODEL`). Interfaz `SimulationProvider` con implementaciones Gemini, caché y estática: cambiar de proveedor no toca el dominio.
-- **Voz (P1/P2, opcional):** Gemini Live API (voz en tiempo real) para el profesional virtual, solo si el P0 está verde.
+- **Presentación de la simulación (P0):** texto con una ilustración estática por escena, pregenerada y revisada antes del evento y servida como archivo del frontend. No hay generación de imágenes en runtime.
+- **Voz (P1, opcional):** Gemini Live API (voz en tiempo real) para el profesional virtual, solo si el P0 está verde; el texto siempre queda en pantalla y la demo no depende de la voz.
 - **Tests:** Vitest.
 - **Despliegue:** Docker + Dokploy en VPS; Vercel como alternativa para el frontend.
 

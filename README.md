@@ -2,7 +2,7 @@
 
 ## Rumbo — Vive la carrera antes de elegirla (nombre de trabajo)
 
-Herramienta de orientación vocacional para estudiantes de grado 10 y 11 de Barranquilla. Lleva a cualquier momento del año lo que hoy solo ocurre en espacios cortos y esporádicos (como el evento "Descubre" de la Universidad de la Costa): vivir un día simulado en la carrera, contrastarlo con datos reales de pensum, salario y empleabilidad, y conectar con profesionales y universidades. El estudiante decide con fundamento y sin el "esto no era lo que yo quería".
+Herramienta de orientación vocacional para estudiantes de grado 10 y 11 de Barranquilla. Lleva a cualquier momento del año lo que hoy solo ocurre en espacios cortos y esporádicos (como el evento "Descubre" de la Universidad de la Costa): vivir un día simulado en la carrera, contrastarlo con datos reales de pensum, salario y empleabilidad, y conectar con profesionales y universidades (en el prototipo, con datos de ejemplo). El estudiante decide con fundamento y sin el "esto no era lo que yo quería".
 
 Idea 2 del equipo para QuiJAM 2026 (26–27 nov 2026, Barranquilla). La idea 1, Copiloto Financiero, vive en `docs-hackathon`.
 
@@ -23,7 +23,7 @@ Idea 2 del equipo para QuiJAM 2026 (26–27 nov 2026, Barranquilla). La idea 1, 
 - `00-quijam/` — reto, alineación, pitch, plan de 48 h, preguntas del jurado, [estrategia para ganar](00-quijam/estrategia-para-ganar.md), [roles del equipo](00-quijam/roles-equipo.md) y [comparativa de ideas](00-quijam/comparativa-ideas.md).
 - `01-product/` — brief, PRD, personas y principios.
 - `02-requirements/` — requisitos con ID, historias, criterios de aceptación y alcance MVP.
-- `03-ux/` — onboarding, flujos, experiencias y bitácora.
+- `03-ux/` — onboarding, flujos, experiencias, bitácora y [panel de ciudad](03-ux/panel-ciudad.md).
 - `04-domain/` — modelo de dominio, reglas, modelo de recomendación y modelo de contenido de carreras.
 - `05-experiencias/` — diseño de las cuatro experiencias (reemplaza la sección Open Payments de la idea 1).
 - `06-ai/` — límites de la IA, grounding y control de sesgos y seguridad de menores.
@@ -33,6 +33,11 @@ Idea 2 del equipo para QuiJAM 2026 (26–27 nov 2026, Barranquilla). La idea 1, 
 - `10-operations/` — desarrollo, despliegue, contingencia y curaduría de contenido.
 - `11-project/` — roadmap, backlog, definición de terminado y guion de demo.
 - `12-decisions/` — ADRs.
+
+## Modelo y cierre de la demo
+
+- **Quién paga:** la Secretaría de Educación de Barranquilla licencia Rumbo para los colegios oficiales (B2G); gratis para el estudiante (`01-product/prd.md` §13).
+- **Cierre de la demo:** panel de ciudad agregado y anónimo, con datos sintéticos rotulados (`03-ux/panel-ciudad.md`).
 
 ## Principio rector
 
@@ -46,7 +51,9 @@ Ninguna cifra se inventa. Toda estadística, salario o tasa que no esté verific
 
 Problema → Objetivo → Experiencia → Requisito (FR/NFR) → Regla (BR) → Dominio → API → Implementación → Test.
 
-Ejemplo: "los espacios de exploración son cortos y esporádicos" → "acceso a la experiencia todo el año" → Simulación → FR-040…FR-047 → BR-020…BR-025 → `Simulation`, `SimulationScene` → `POST /simulations` → `simulation-service` → `09-testing/ai-failures.md` casos AI-01…AI-15.
+Ejemplo: "los espacios de exploración son cortos y esporádicos" → "acceso a la experiencia todo el año" → Simulación → FR-040…FR-049 → BR-020…BR-027 → `Simulation`, `SimulationScene` → `POST /simulations` → `simulation-service` → `09-testing/ai-failures.md` casos AI-01…AI-16.
+
+Segundo ejemplo: "la ciudad no sabe qué quieren estudiar sus jóvenes frente a lo que demanda" → O7 "datos para la ciudad" → Panel de ciudad → FR-085…FR-088 → BR-060…BR-064 → `Sector`, `LaborDemandPoint`, `CityInsightCell` → `GET /city/insights` → `CityInsightsService` → AC-16, AC-17, SM-12.
 
 ## Decisiones (ADR)
 

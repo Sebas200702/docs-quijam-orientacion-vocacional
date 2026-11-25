@@ -38,7 +38,9 @@ Prioridad entre corchetes. Los criterios verificables están en `acceptance-crit
 - FR-044 [P0]: Al terminar, pedir una reflexión: "¿Te viste haciendo esto?" (escala de 1 a 5), qué le gustó y qué no.
 - FR-045 [P0]: Si el LLM falla o tarda más de 8 s, continuar con el texto estático del guion sin perder el progreso.
 - FR-046 [P1]: Retomar una simulación interrumpida.
-- FR-047 [P0]: Si el estudiante pregunta por su propia salud o la de alguien cercano, no responder el contenido: mostrar un texto fijo que remite a un profesional de salud o a la línea de emergencias, sin diagnóstico, medicamentos ni dosis (los casos clínicos de la simulación son ficticios y educativos).
+- FR-047 [P0]: Si el estudiante pregunta por su propia salud o la de alguien cercano, no responder el contenido: mostrar un texto fijo que remite a un profesional de salud o a la línea de emergencias, sin diagnóstico, medicamentos ni dosis (los casos clínicos de la simulación son ficticios y educativos). El texto libre del estudiante no se persiste (BR-025).
+- FR-048 [P0]: Presentación base de la simulación: texto con una ilustración estática por escena (archivo pregenerado con texto alternativo). No se generan imágenes en runtime; si falta la ilustración de una escena, se muestra la ilustración genérica de la carrera.
+- FR-049 [P1]: Voz opcional del profesional virtual con Gemini Live, solo si el P0 está verde. Se activa con un botón, se puede apagar y, si falla, la escena sigue en texto sin aviso de error.
 
 ## Contrastar — información realista
 
@@ -53,7 +55,7 @@ Prioridad entre corchetes. Los criterios verificables están en `acceptance-crit
 
 - FR-060 [P0]: Mostrar una agenda de eventos (puertas abiertas, Descubre u otros, ferias, charlas SENA) filtrable por carrera y fecha, disponible todo el año.
 - FR-061 [P0]: Permitir marcar "me interesa" en un evento; queda en la bitácora.
-- FR-062 [P0]: Listar mentores verificados por carrera (nombre de pila, cargo, institución que lo verifica y una frase).
+- FR-062 [P0]: Listar mentores por carrera (nombre de pila, cargo, institución y una frase). En el MVP son perfiles de ejemplo con la etiqueta "Ejemplo" visible; la verificación por la institución es P2 (BR-044). Ningún texto de la UI afirma que el mentor o la alianza son reales.
 - FR-063 [P0]: Permitir enviar preguntas a un mentor. Las preguntas entran en moderación y solo se publican la pregunta y la respuesta aprobadas, visibles para todos y de forma anónima.
 - FR-064 [P0]: No ofrecer chat privado ni intercambio de datos de contacto entre estudiantes y mentores.
 - FR-065 [P1]: Solicitar cupo en una sesión grupal con mentores.
@@ -70,6 +72,15 @@ Prioridad entre corchetes. Los criterios verificables están en `acceptance-crit
 
 - FR-080 [P1]: Panel por colegio con agregados anónimos: estudiantes activos, carreras más exploradas y % de estudiantes con loop completo. Solo muestra grupos de 5 estudiantes o más.
 - FR-081 [P1]: El orientador ve el resumen individual solo si el estudiante lo comparte.
+
+## Panel de ciudad — Secretaría de Educación (P0, cierre de la demo)
+
+UX en `03-ux/panel-ciudad.md`; reglas BR-060…BR-064.
+
+- FR-085 [P0]: Vista agregada y anónima que compara, por sector estratégico de Barranquilla (puerto y logística, tecnología, salud, servicios jurídicos y públicos, otros), el **interés vocacional** de los estudiantes de 10 y 11 con la **demanda laboral** del sector, y resalta la brecha entre ambos.
+- FR-086 [P0]: Aplicar k-anonimato: toda celda (sector × grado × periodo) con menos de 20 estudiantes se suprime y se muestra "Grupo muy pequeño para mostrar". No hay filtro ni desglose por colegio ni por estudiante.
+- FR-087 [P0]: En la demo, el panel lee un seed de agregados sintéticos (no estudiantes ficticios) y muestra en cada vista el rótulo "Datos sintéticos de demostración". La demanda laboral real queda como `[DATO POR VERIFICAR]` con fuente sugerida.
+- FR-088 [P0]: Acceso protegido por una clave del panel (`CITY_PANEL_KEY`) en el MVP; roles institucionales en P2. Filtros: grado (10, 11, ambos) y periodo.
 
 ## Contenido y moderación
 

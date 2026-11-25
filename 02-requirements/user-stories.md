@@ -4,7 +4,7 @@
 |----|-------|---------|-------|----|
 | US-01 | estudiante sin idea clara | hacer un test corto | ver tres caminos que encajan conmigo y por qué | FR-020…FR-024 |
 | US-02 | estudiante | ver una carrera fuera de mi zona | no quedarme solo con lo obvio | FR-023 |
-| US-03 | estudiante | vivir un día simulado en Medicina | saber si me veo en un turno real de urgencias | FR-040…FR-044 |
+| US-03 | estudiante | vivir un día simulado en Medicina, con escenas ilustradas | saber si me veo en un turno real de urgencias | FR-040…FR-044, FR-048 |
 | US-04 | estudiante | preguntar en la simulación "¿y cuánto se gana?" | obtener la respuesta real y no una inventada | FR-043, FR-051 |
 | US-05 | estudiante | ver el pensum, la duración, el costo y el salario con fuente | contrastar lo que viví con la realidad | FR-050…FR-054 |
 | US-06 | estudiante | saber dónde estudiarla en Barranquilla, incluido el SENA | conocer rutas que se ajustan a mi situación | FR-054 |
@@ -19,3 +19,4 @@
 | US-15 | orientadora | ver qué exploran mis grupos sin ver respuestas privadas | planear mis clases de orientación | FR-080, FR-081 (P1) |
 | US-16 | equipo de contenido | cargar carreras y marcar datos como verificados | publicar solo información confiable | FR-090, FR-091 |
 | US-17 | jurado o visitante | entrar en modo demo | ver el loop sin registrarse | FR-005 |
+| US-18 | profesional de la Secretaría de Educación | ver en agregado qué quieren estudiar los jóvenes frente a la demanda laboral de la ciudad | decidir dónde reforzar orientación, becas y oferta sin ver datos personales | FR-085…FR-088 |

@@ -40,12 +40,12 @@ Las referencias normativas las debe revisar un abogado antes de cualquier piloto
 ### Protocolo de señales de riesgo (F5)
 - **Detección:** palabras clave (autolesión, suicidio, abuso, violencia en casa, "no quiero vivir", etc.) más el `intent: risk_signal` de Gemini. Ante la duda, se activa el protocolo.
 - **Respuesta fija (no generada por la IA):** "Lo que escribiste es importante. No estás solo/a. Puedes hablar ahora con una línea de ayuda gratuita o con tu orientador o un adulto de confianza." Más las líneas oficiales vigentes: `[DATO POR VERIFICAR — fuente sugerida: Ministerio de Salud / Secretaría de Salud de Barranquilla / ICBF (Línea 141)]`.
-- No se guarda el texto; solo el evento `risk_signal_shown` (sin contenido).
+- No se guarda el texto: el turno queda en `simulation_turns` con `free_text` nulo y solo se registra el evento `risk_signal_shown` (sin contenido).
 - La IA no intenta aconsejar.
 - P2: acuerdo con los colegios para que el orientador reciba una alerta, solo si existe un protocolo institucional y la autorización correspondiente.
 
 ### Preguntas de salud personal (simulación de Medicina)
 - Los casos clínicos de la simulación son **ficticios y educativos**. La IA no da diagnósticos, medicamentos ni dosis, ni a los personajes como indicación ni al estudiante sobre sí mismo.
 - **Detección:** palabras clave ("me duele", "tengo fiebre", "¿qué me tomo?", "mis síntomas", "¿será que tengo…?") más el `intent: personal_health` de Gemini.
-- **Respuesta fija (no generada por la IA):** ver el texto en `05-experiencias/simulacion-dia-en-la-carrera.md` (remite a un adulto de confianza, a un profesional de salud y a la línea de emergencias). Se registra solo el evento `health_redirect_shown`, sin texto.
+- **Respuesta fija (no generada por la IA):** ver el texto en `05-experiencias/simulacion-dia-en-la-carrera.md` (remite a un adulto de confianza, a un profesional de salud y a la línea de emergencias). El turno queda con `free_text` nulo y se registra solo el evento `health_redirect_shown`, sin texto.
 - Si también hay señal de riesgo, manda el protocolo F5.
